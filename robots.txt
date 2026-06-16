@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://leogroup.in/amazon.php?sitemap.xml
+Sitemap: https://leogroup.in/sitemap.xml

@@ -1,0 +1,534 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+		font-family: 'trebuc';
+		src: url('trebuc.eot');
+		src: url('trebuc.eot?#iefix') format('embedded-opentype');
+		font-weight: normal;
+		font-style: normal;
+		}
+@font-face {
+		font-family: 'trebuc';
+		src: url('trebuc.eot');
+		src: url('trebuc?#iefix') format('embedded-opentype'),
+		url('trebuc.ttf') format('truetype'),
+		url('trebuc.svg#ManoramaRegular') format('svg');
+		font-weight: normal;
+		font-style: normal;
+		}
+
+body {
+		background:url(../images/main_bg.jpg) repeat-x;
+		color:#313131;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:12px;
+		line-height:20px;
+		margin:0px;
+		padding:0px;
+		outline:none;
+		text-align:justify;
+		}
+		
+* {
+		outline:none;
+		text-decoration:none;
+		border:none;
+		}
+		
+fieldset {
+		border:solid 1px #CCCCCC;
+		}		
+		
+p {
+		margin-top:10px;
+		}		
+		
+table {
+		width:100%;
+		border:none;
+		padding:0px;
+		}		
+		
+.clear {
+		clear:both;
+		}		
+		
+		
+#header {
+		width:997px;
+		height:auto;
+		overflow:hidden;
+		margin:0px auto;
+		}
+		
+#top {
+		width:997px;
+		height:68px;
+		}
+		
+#top_left, #top_right {
+		width:27px;	
+		height:68px;
+		float:left;
+		}
+		
+#top_middle {
+		width:943px;
+		height:68px;
+		float:left;
+		background:url(../images/header_bg.jpg) repeat-x;
+		}
+		
+#top_middle img {
+		float:right;
+		margin:20px 0px 0px 10px;
+		
+		-moz-box-shadow:    0px 2px 2px 2px rgba(0,0,0,0.15);
+		-webkit-box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.15);
+		box-shadow:         0px 2px 2px 2px rgba(0,0,0,0.15);
+		}		
+		
+#logo {
+		width:305px;
+		height:115px;
+		position:absolute;
+		z-index:1111;
+		margin-left:27px;
+		
+		-moz-box-shadow:    0px 2px 2px 2px rgba(0,0,0,0.15);
+		-webkit-box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.15);
+		box-shadow:         0px 2px 2px 2px rgba(0,0,0,0.15);
+		
+		}
+		
+#banner {
+		width:970px;
+		height:219px;
+		margin:25px auto;
+		clear:both;
+		background-color:#000;
+		}									
+		
+#navigation_cont {
+		width:997px;
+		height:37px;
+		}
+		
+#navigation_left, #navigation_right {
+		width:27px;
+		height:37px;
+		float:left;
+		}
+		
+#navigation {
+		width:943px;
+		height:37px;
+		float:left;
+		background:url(../images/nav_bg.jpg) repeat-x;
+		}
+		
+nav ul {
+		width:943px;
+		height:25px;
+		margin:13px 0px 0px 7px;
+		padding:0px;
+		list-style:none;
+		}
+		
+nav ul li {
+		height:22px;
+		float:left;
+		font-family:trebuc;
+		font-size:14px;
+		color:#000;
+		line-height:22px;
+		text-transform:uppercase;
+		padding:0px 42px 0px 42px;
+		margin-right:5px;
+		
+		border-radius:5px; -moz-border-radius:5px; -ms-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px;
+		}
+		
+nav ul li:hover {
+		background:#CCCCCC;
+		color:#000;
+		cursor:pointer;
+		}			
+		
+.selected {
+		height:22px;
+		float:left;
+		background:url(../images/nav_bg_01.jpg) repeat-x;
+		font-family:trebuc;
+		font-size:14px;
+		color:#FFFFFF;
+		line-height:22px;
+		text-transform:uppercase;
+		padding:0px 23px 0px 23px;
+		margin-right:5px;
+		
+		border-radius:5px; -moz-border-radius:5px; -ms-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px;
+		}
+		
+#container {
+		width:925px;
+		height:auto;
+		overflow:hidden;
+		margin:40px auto;
+		}
+		
+#cont_left {
+		width:600px;
+		height:auto;
+		overflow:hidden;
+		float:left;
+		}
+		
+#cont_right {
+		width:260px;
+		height:auto;
+		overflow:hidden;
+		float:right;
+		}
+		
+.head_01 {
+		font-family:trebuc;
+		font-size:18px;
+		color:#000000;
+		line-height:30px;
+		border-bottom:dashed 1px #000000;
+		}
+.head_0 {
+		font-family:trebuc;
+		font-size:18px;
+		color:#000000;
+		line-height:30px;
+		}
+		
+.head_02 {
+		width:100%;
+		height:36px;
+		background:url(../images/head_02.jpg) repeat-x;
+		
+		font-family:trebuc;
+		font-size:14px;
+		font-style:italic;
+		color:#527710;
+		line-height:40px;
+		}
+		
+.head_02 img {
+		float:left;
+		margin-left:5px;
+		}		
+		
+#abt>article {
+		margin-top:10px;
+		}
+		
+#abt>article:after {
+		content:"Leo group of concerns is predominantly in the field of pharma distribution in Kerala State. By systematic functioning during last three and half decades we have attained No. One position both in District wise as well as Statewise operations. Incidentally we deal with many of the leaders in this field. Established in the year 1974, ours is a family concern owned by three brothers, Mr. T.S. Pattabhiram, B. Tech (IIT, MADRAS), MBA (Indian Institute of Sciences, Bangalore) and Mr. T.S. Anantharaman, B. Com., ... ";
+		}		
+		
+#abt>article+div {
+		border-top:solid 1px #CCCCCC;
+		}		
+		
+.right_image {
+		float:right;
+		padding:3px;
+		border:solid 1px #CCCCCC;
+		margin-left:10px;
+		}
+		
+.left_image {
+		float:left;
+		padding:3px;
+		border:solid 1px #CCCCCC;
+		margin-right:10px;
+		}		
+		
+.more_button {
+		width:100px;
+		background-color:#d2d1d1;
+		height:22px;
+		line-height:22px;
+		font-family:trebuc;
+		font-size:12px;
+		font-style:italic;
+		color:#000000;
+		text-align:center;
+		margin-top:2px;
+		cursor:pointer;
+		text-transform:capitalize;
+		}
+		
+.more_button:hover {
+		background-color:#168bd1;
+		color:#FFFFFF;
+		}
+		
+.more_button:after {
+		content:"Read More...";
+		} 
+		
+#groups section {
+		width:285px;
+		float:left;
+		height:80px;
+		background-color:#eeeeee;
+		margin-top:15px;
+		}
+		
+#groups section>div {
+		width:214px;
+		height:auto;
+		overflow:hidden;
+		margin:10px auto;
+		text-align:center;
+		}	
+		
+#gallery {
+		margin-top:20px;
+		}
+		
+#login, #contact, #number {
+		width:260px;
+		height:auto;
+		overflow:hidden;
+		background-color:#ececec;
+		
+		font-family:trebuc;
+		font-size:12px;
+		font-style:italic;
+		font-weight:bold;
+		}
+		
+#login article, #contact article, #number article {
+		width:240px;
+		height:auto;
+		overflow:hidden;
+		margin:0px auto;
+		}
+		
+#login input {
+		width:238px;
+		height:18px;
+		background-color:#FFFFFF;
+		border:solid 1px #CCCCCC;
+		border-radius:3px; -moz-border-radius:3px; -ms-border-radius:3px; -webkit-border-radius:3px; -o-border-radius:3px;
+		
+		font-family:trebuc;
+		font-size:12px;
+		font-style:italic;
+		color:#666666;
+		}
+		
+.login, .login a, .login a:hover {
+		font-family:trebuc;
+		font-size:11px;
+		text-decoration:underline;
+		color:#1f5cab;
+		font-weight:normal;
+		}
+		
+#infrastructure {
+		width:260px;
+		height:auto;
+		overflow:hidden;
+		background-color:#ececec;
+		}
+		
+#infrastructure article {
+		width:240px;
+		height:auto;
+		overflow:hidden;
+		margin:0px auto;
+		}
+		
+#infrastructure article img {
+		padding:3px;
+		border:solid 1px #CCCCCC;					
+		}
+		
+#infrastructure a, #infrastructure a:hover {
+		font-family:trebuc;
+		color:#527710;
+		text-decoration:none;
+		}
+		
+#quick_contact {
+		width:260px;
+		height:56px;
+		background:url(../images/quick_contact_bg.jpg) no-repeat;
+		padding-left:55px;
+		padding-top:18px;
+		
+		font-family:trebuc;
+		font-size:12px;
+		color:#434343;
+		font-style:italic;
+		}
+		
+#quick_contact a {
+		font-family:trebuc;
+		font-size:12px;
+		color:#434343;
+		font-style:italic;
+		text-decoration:none;
+		}
+		
+#quick_contact a:hover{
+		color:#FF0000;
+		text-decoration:none;
+		}	
+		
+footer {
+		width:100%;
+		height:75px;
+		background-color:#0969a3;
+		}
+		
+footer>div {
+		width:943px;
+		height:75px;
+		margin:0px auto;
+		} 
+		
+footer>div section {
+		width:750px;
+		height:75px;
+		float:left;
+		}
+		
+footer>div aside {
+		width:193px;
+		height:75px;
+		float:right;
+		}
+		
+.pro, .pro a {
+		font-family:trebuc;
+		font-size:11px;
+		color:#179cec;
+		text-decoration:none;
+		margin-top:7px;
+		}
+		
+.pro a:hover {
+		color:#FFFFFF;
+		text-decoration:none;
+		}
+		
+.bottom_link, .bottom_link a {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#000000;
+		text-decoration:none;
+		}
+		
+.bottom_link a:hover {
+		color:#FFFFFF;
+		text-decoration:none;
+		}
+		
+.abt_link {
+		width:100px;
+		background-color:#d2d1d1;
+		height:22px;
+		line-height:22px;
+		font-family:trebuc;
+		font-size:12px;
+		font-style:italic;
+		color:#000000;
+		text-align:center;
+		margin-top:2px;
+		cursor:pointer;
+		text-transform:capitalize;
+		float:right;
+		margin-top:-23px;
+		}
+
+.abt_link1 {
+		width:100px;
+		background-color:#d2d1d1;
+		height:22px;
+		line-height:22px;
+		font-family:trebuc;
+		font-size:12px;
+		font-style:italic;
+		color:#000000;
+		text-align:center;
+		margin-top:2px;
+		cursor:pointer;
+		text-transform:capitalize;
+		float:left;
+		margin-top:-23px;
+		margin-left:25px;
+		}
+				
+.abt_link1:hover {
+		background-color:#168bd1;
+		color:#FFFFFF;
+		}
+
+.abt_link:hover {
+		background-color:#168bd1;
+		color:#FFFFFF;
+		}		
+.management {
+		text-align:center;
+		vertical-align:middle;
+		}
+		
+.image_border {
+		padding:3px;
+		border:solid 1px #CCCCCC;
+		}
+		
+.textbox {
+		width:205px;
+		height:18px;
+		background-color:#FFFFFF;
+		border:solid 1px #CCCCCC;
+		border-radius:3px; -moz-border-radius:3px; -ms-border-radius:3px; -webkit-border-radius:3px; -o-border-radius:3px;
+		
+		font-family:trebuc;
+		font-size:12px;
+		font-style:italic;
+		color:#666666;
+		resize:none;
+		}
+		
+.sub_head {
+		padding:3px;
+		background-color:#CCCCCC;
+		color:#000000;
+		font-weight:bold;
+		font-style:italic;
+		width:100%;
+		height:20px;
+		line-height:20px;
+		}																																	
+										
+		
+		
+		
+		
+																									
+		
+header, section, aside, footer, nav, article {
+		display:block;
+		}
+		
+										
+		
+		
+		
+		
+		
+		
+				
+				

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team | Leo Group</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .editorial-header { padding: 12rem 5% 5rem; border-bottom: 1px solid var(--border-color); }
+    .editorial-header h1 { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 400; font-style: italic; letter-spacing: -1px; }
+    
+    .section-title { padding: 5rem 5% 2rem; font-family: 'DM Mono', monospace; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); border-bottom: 1px solid var(--border-color); }
+    
+    .team-grid-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding: 5rem 5%; border-bottom: 1px solid var(--border-color); }
+    .team-grid-ops { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; padding: 5rem 5%; border-bottom: 1px solid var(--border-color); }
+    
+    .team-member { padding-bottom: 2rem; border-bottom: 1px solid var(--border-color); }
+    .team-member:last-child { border-bottom: none; }
+    
+    .team-photo-top { width: 100%; height: 500px; background-size: cover; background-position: center top; margin-bottom: 1.5rem; filter: grayscale(100%); transition: filter 0.5s ease; background-color: #E4E4E7; }
+    .team-photo-ops { width: 100%; height: 350px; background-size: cover; background-position: center top; margin-bottom: 1.5rem; filter: grayscale(100%); transition: filter 0.5s ease; background-color: #E4E4E7; }
+    
+    .team-member:hover .team-photo-top, .team-member:hover .team-photo-ops { filter: grayscale(0%); }
+    
+    .team-name { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 0.5rem; line-height: 1.2; }
+    .team-title { font-family: 'DM Mono', monospace; font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); line-height: 1.4; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="logo.png" alt="Leo Group Logo" class="logo"></a>
+    <nav>
+      <ul>
+        <li class="dropdown">
+          <a href="about.html">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html">Our Legacy</a></li>
+            <li><a href="team.html" style="color: var(--primary-color);">Leadership</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="services.html">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="services.html">Overview</a></li>
+            <li><a href="logistics.html">Logistics</a></li>
+            <li><a href="specialty.html">Specialty Drugs</a></li>
+          </ul>
+        </li>
+        <li><a href="infrastructure.html">Infrastructure</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="btn btn-outline">Partner With Us</a>
+  </header>
+
+  <section class="editorial-header">
+    <div class="reveal-mask"><h1 class="reveal-text">Leadership.</h1></div>
+  </section>
+
+  <div class="section-title fade-up">Top Management</div>
+
+  <section class="team-grid-top">
+    <div class="team-member fade-up">
+      <div class="team-photo-top" style="background-image: url('assets/legacy_img/prfl1.jpg');"></div>
+      <h2 class="team-name">(Late) T.S. Pattabhiraman</h2>
+      <div class="team-title">Founder</div>
+    </div>
+    <div class="team-member fade-up" style="transition-delay: 100ms;">
+      <div class="team-photo-top" style="background-image: url('assets/legacy_img/prfl2.jpg');"></div>
+      <h2 class="team-name">T. S. Anantharaman</h2>
+      <div class="team-title">Chairman</div>
+    </div>
+    <div class="team-member fade-up" style="transition-delay: 200ms;">
+      <div class="team-photo-top" style="background-image: url('assets/legacy_img/prfl3.jpg');"></div>
+      <h2 class="team-name">Sidharth Ram</h2>
+      <div class="team-title">Managing Director</div>
+    </div>
+    <div class="team-member fade-up">
+      <div class="team-photo-top" style="background-image: url('assets/legacy_img/prfl4.jpg');"></div>
+      <h2 class="team-name">Usha Pattabhiram</h2>
+      <div class="team-title">Director</div>
+    </div>
+    <div class="team-member fade-up" style="transition-delay: 100ms;">
+      <div class="team-photo-top" style="background-image: url('assets/legacy_img/prfl5.jpg');height: 500px !important;"></div>
+      <h2 class="team-name">Girija Anantharaman</h2>
+      <div class="team-title">Director</div>
+    </div>
+    <div class="team-member fade-up" style="transition-delay: 200ms;">
+      <div class="team-photo-top" style="background-image: url('assets/legacy_img/prfl6.jpg');"></div>
+      <h2 class="team-name">Priya Ram</h2>
+      <div class="team-title">Director, Chief Financial Officer</div>
+    </div>
+    <div class="team-member fade-up">
+      <div class="team-photo-top" style="background-image: url('assets/legacy_img/prfl8.jpg');"></div>
+      <h2 class="team-name">Sajan Ganapathy</h2>
+      <div class="team-title">Chief Executive Officer</div>
+    </div>
+  </section>
+
+  <div class="section-title fade-up">Operations & Management</div>
+
+  <section class="team-grid-ops">
+    <div class="team-member fade-up">
+      <div class="team-photo-ops" style="background-image: url('assets/legacy_img/team/1.jpg');"></div>
+      <h2 class="team-name">Surendran P.B</h2>
+      <div class="team-title">Senior Manager (Redistribution)</div>
+    </div>
+    <div class="team-member fade-up">
+      <div class="team-photo-ops" style="background-image: url('assets/legacy_img/team/3.jpg');"></div>
+      <h2 class="team-name">Ramdas K.</h2>
+      <div class="team-title">Manager (Lupin C&FA)</div>
+    </div>
+    <div class="team-member fade-up">
+      <div class="team-photo-ops" style="background-image: url('assets/legacy_img/team/4.jpg');"></div>
+      <h2 class="team-name">K.G. Sureshkumar</h2>
+      <div class="team-title">Manager (Leo Logistics)</div>
+    </div>
+    <div class="team-member fade-up">
+      <div class="team-photo-ops" style="background-image: url('assets/legacy_img/team/5.jpg');"></div>
+      <h2 class="team-name">Francis Sunny</h2>
+      <div class="team-title">Manager (Eris C&FA)</div>
+    </div>
+    <div class="team-member fade-up">
+      <div class="team-photo-ops" style="background-image: url('assets/legacy_img/team/7.jpg');"></div>
+      <h2 class="team-name">Gopinath V.</h2>
+      <div class="team-title">Manager (MSD C&FA)</div>
+    </div>
+    <div class="team-member fade-up">
+      <div class="team-photo-ops" style="background-image: url('assets/legacy_img/team/8.jpg');"></div>
+      <h2 class="team-name">Asha P.R</h2>
+      <div class="team-title">Manager (Fourrts Superstockist)</div>
+    </div>
+
+    </div>
+    <div class="team-member fade-up">
+      <div class="team-photo-ops" style="background-image: url('assets/legacy_img/team/10.jpg');"></div>
+      <h2 class="team-name">Anoop P.S</h2>
+      <div class="team-title">Manager (Redistribution)</div>
+    </div>
+    <div class="team-member fade-up">
+      <div class="team-photo-ops" style="background-image: url('assets/legacy_img/team/11.jpg');"></div>
+      <h2 class="team-name">Nitheesh T.P</h2>
+      <div class="team-title">Manager (Leo Healthcare)</div>
+    </div>
+    <div class="team-member fade-up">
+      <div class="team-photo-ops" style="background-image: url('assets/legacy_img/team/12.jpg');"></div>
+      <h2 class="team-name">Mini Ramdas</h2>
+      <div class="team-title">Manager (Jockey Distribution)</div>
+    </div>
+    <div class="team-member fade-up">
+      <div class="team-photo-ops" style="background-image: url('assets/legacy_img/team/25.jpg');"></div>
+      <h2 class="team-name">Manoharan K.T</h2>
+      <div class="team-title">Manager (Redistribution)</div>
+    </div>
+    <div class="team-member fade-up">
+      <div class="team-photo-ops" style="background-image: url('assets/legacy_img/team/14.jpg');"></div>
+      <h2 class="team-name">Sajitha Jayachandran</h2>
+      <div class="team-title">Accounts & Finance</div>
+    </div>
+    <div class="team-member fade-up">
+      <div class="team-photo-ops" style="background-image: url('assets/legacy_img/team/27.jpg');"></div>
+      <h2 class="team-name">Janson Kolady</h2>
+      <div class="team-title">Manager (Leo Health Care)</div>
+    </div>
+    <div class="team-member fade-up">
+      <div class="team-photo-ops" style="background-image: url('assets/legacy_img/team/31.jpg');"></div>
+      <h2 class="team-name">Anjaly Sakhil Sagar</h2>
+      <div class="team-title">Manager (Redistribution)</div>
+    </div>
+
+    <div class="team-member fade-up">
+      <div class="team-photo-ops" style="background-image: url('assets/legacy_img/team/16.jpg');"></div>
+      <h2 class="team-name">Siji Melbin</h2>
+      <div class="team-title">Accounts & Finance</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="fade-up">
+        <div class="footer-logo">Leo Group.</div>
+        <p style="font-family: var(--font-body); font-size: var(--text-sm);">Kerala's trusted warehousing and distribution partner since 1980.</p>
+      </div>
+      <div class="fade-up">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="infrastructure.html">Infrastructure</a></li>
+        </ul>
+      </div>
+      <div class="fade-up">
+        <h4>Contact</h4>
+        <ul style="font-family: var(--font-body);">
+          <li>NH Bypass Junction, Kuttanellur</li>
+          <li>Thrissur — 680014, Kerala</li>
+          <li>+91 9605 068 517</li>
+          <li>sidharthram@leogroup.in</li>
+        </ul>
+      </div>
+      <div class="fade-up">
+        <h4>Location</h4>
+        <iframe src="https://maps.google.com/maps?q=10.523034,76.211738&z=14&output=embed" width="100%" height="140" style="border:0; filter: invert(90%) hue-rotate(180deg) grayscale(80%);" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+    <div class="footer-bottom fade-up">
+      &copy; 2024 LEO GROUP | DESIGNED BY AGENCY
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

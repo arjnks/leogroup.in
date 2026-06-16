@@ -1,0 +1,207 @@
+<?php
+$currentPage = 'about';
+include("header.php");
+
+?>
+
+<section class="inner-banner">
+    <div class="container text-center">
+        <h2>About Us</h2>
+      
+    </div><!-- /.container -->
+</section><!-- /.inner-banner -->
+
+<section class="about-area sec-pad pb0">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="about-content">
+					<div class="sec-title">
+					
+						<h5>journey of becoming the biggest Player in the business</h5>
+					</div><!-- /.sec-title -->
+					<p class="abt-p2">Our journey of becoming the market leader started in the year 1974 when Mr. T.S. Pattabhiraman, B. Tech (IIT, MADRAS), MBA (Indian Institute of Sciences, Bangalore) , Mr. T.S. Anantharaman, B. Com., FCA and Mr. T.S. Rajaram B.Sc . FCA commenced a partnership firm with two employees and 250 sq.ft of rented space. They being highly academically qualified, ambitious and resourceful, fundamentals of the business were established right at the beginning which helped the group grow enormously over the years. Mr. Sidharth Ram is at the helm of affairs since 2005, in his role as President of Leo Group. Leo Group is now a conglomerate of multiple private limited companies as well as partnership firms
+</p>
+			
+
+
+			
+				
+				</div><!-- /.about-content -->
+			</div><!-- /.col-md-6 -->
+			
+			
+			<div class="col-md-12">
+				<div class="prtnr-wraper">
+				<ul class="row-ul1">
+				<li><img class="img-responsive" src="img/prtnr1.jpg"></li>
+				<li><img class="img-responsive" src="img/prtnr2.jpg"></li>
+				<li style="width: 183px;"><img class="img-responsive" src="img/prtnr3.jpg"></li>
+				<li><img class="img-responsive" src="img/prtnr4.jpg"></li>
+				
+				</ul>
+						<ul class="row-ul2">
+				<li><img class="img-responsive" src="img/prtnr5.jpg"></li>
+				<li><img class="img-responsive" src="img/prtnr6.jpg"></li>
+				<li style="width: 195px;"><img class="img-responsive" src="img/prtnr7.jpg"></li>
+				</ul>
+				</div>
+			</div>
+	<div class="col-md-12">
+	<p class="abt-p2 mgtp18">which gives direct employment to 350 employees. We invested in creating infrastructure of world class level; we currently own 1.30 lakh sq.ft of state of the art warehouse. All these are an affirmation of us being the market leader in warehousing and distribution in Kerala.</p>
+	</div>
+		</div><!-- /.row -->
+		
+		
+
+		<div class="row">
+		<div class="col-md-12">
+		<div class="mng-team-title">top management team</div>
+		
+		</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+			
+			<div class="mng-team">
+			
+			<div class="col-md-4 abt-team">
+				<div class="team-pic">
+			<img class="img-responsive" src="img/prfl1.jpg">
+		
+			</div>
+			<div class="title-prf">
+				<h4>T.S. Pattabhiraman</h4>
+			<h5>FOUNDER</h5>
+			</div>
+			
+			</div>
+			<div class="col-md-4 abt-team">
+				<div class="team-pic">
+			<img class="img-responsive" src="img/prfl2.jpg">
+			</div>
+				<div class="title-prf">
+				<h4>T. S. Anantharaman</h4>
+			<h5> CHAIRMAN</h5>
+			</div>
+			
+			</div>
+				<div class="col-md-4 abt-team">
+				<div class="team-pic">
+			<img class="img-responsive" src="img/prfl3.jpg">
+			</div>
+				<div class="title-prf">
+				<h4> Sidharth Ram</h4>
+			<h5>PRESIDENT</h5>
+			</div>
+			
+			</div>
+			
+			</div>
+		</div>
+		</div>
+			<div class="row">
+			<div class="col-md-12">
+			<div class="mng-team">
+			
+			<div class="col-md-4 abt-team">
+			<div class="team-pic">
+			<img class="img-responsive" src="img/prfl4.jpg">
+			</div>
+			
+				<div class="title-prf">
+				<h4>Usha Pattabhiram</h4>
+			<h5>Managing Partner, Leo Enterprises
+</h5>
+			</div>
+			
+			</div>
+			<div class="col-md-4 abt-team">
+				<div class="team-pic">
+			<img class="img-responsive" src="img/prfl5.jpg">
+			</div>
+				<div class="title-prf">
+				<h4>Girija Anantharaman</h4>
+			<h5>Managing Partner, Leo Distributors
+</h5>
+			</div>	
+			
+			</div>
+				<div class="col-md-4 abt-team">
+				<div class="team-pic">
+			<img class="img-responsive" src="img/prfl6.jpg">
+			</div>
+				<div class="title-prf">
+				<h4>Priya Ram</h4>
+			<h5>Partner, Chief Financial Officer
+</h5>
+			</div>	
+			
+			</div>
+			
+			</div>
+			
+			</div>
+			
+		</div>
+		
+		
+			<div class="row">
+			<div class="col-md-12">
+			<div class="mng-team">
+			
+			
+			
+			<div class="col-md-4 abt-team col-md-offset-4">
+				<div class="team-pic">
+					<img class="img-responsive" src="img/prfl8.jpg">
+				</div>
+				<div class="title-prf">
+					<h4>Sajan Ganapathy</h4>
+					<h5>CHIEF EXECUTIVE OFFICER</h5>
+				</div>	
+			</div>
+		
+			
+			</div>
+			
+			</div>
+			
+		</div>
+			
+	
+			
+	
+		
+		</div>
+		
+	</div><!-- /.container -->
+</section><!-- /.about-area -->
+  <div class="modal fade" id="Leo-enter" role="dialog">
+    <div class="modal-dialog" style="width: 90%;
+    top: 11%;">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Leo Enterprises</h4>
+        </div>
+        <div class="modal-body">
+    <div class="col-md-12">
+	
+	
+	</div>
+        </div>
+    
+      </div>
+
+</div>
+</div>
+
+
+<?php
+
+include("footer.php");
+
+?>

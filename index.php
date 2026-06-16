@@ -1,0 +1,308 @@
+<?php
+$currentPage = 'index';
+include("header.php");
+include('stockupload/include/db.php');
+error_reporting(0);
+date_default_timezone_set("Asia/Kolkata");
+?>
+
+<div id="minimal-bootstrap-carousel" class="carousel slide carousel-fade slider-home-one" data-ride="carousel">
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner" role="listbox">
+		<div class="item active slide-1" style="background-image: url(img/banner1.jpg);background-position: center;background-size:cover;">
+
+		
+		</div>
+		<div class="item slide-2" style="background-image: url(img/banner2.jpg);background-position: center center;background-size:cover;">
+
+			
+		</div>
+		<div class="item slide-2" style="background-image: url(img/banner3.jpg);background-position: center center;background-size:cover;">
+
+			
+		</div>
+			<div class="item slide-2" style="background-image: url(img/banner4.jpg);background-position: center center;background-size:cover;">
+
+			
+		</div>
+	</div>
+	<!-- Controls -->
+	<a class="left carousel-control" href="#minimal-bootstrap-carousel" role="button" data-slide="prev">
+		<i class="fa fa-angle-left"></i>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#minimal-bootstrap-carousel" role="button" data-slide="next">
+		<i class="fa fa-angle-right"></i>
+		<span class="sr-only">Next</span>
+	</a>
+
+	<ul class="carousel-indicators list-inline custom-navigation">
+		<li data-target="#minimal-bootstrap-carousel" data-slide-to="0" class="active"></li><!--
+            --><li data-target="#minimal-bootstrap-carousel" data-slide-to="1"></li>
+           <li data-target="#minimal-bootstrap-carousel" data-slide-to="2"></li>
+           <li data-target="#minimal-bootstrap-carousel" data-slide-to="3"></li>
+           
+	</ul>
+</div>
+
+
+
+<section class="about-area sec-pad pb0 mb-pd">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="about-content animated fadeInRight">
+					<h4 class="h4style">LEGACY OF LEADERSHIP</h4>
+				</div><!-- /.about-content -->
+			</div><!-- /.col-md-6 -->
+			
+				<div class="col-md-8 col-md-offset-2">
+				<div class="abt-p">
+				<p>Leo Group is the leading player in warehousing and distribution in Kerala. Over the last 44 years, business of Leo Group grew consistently at 20% CAGR. We own and operate 1.3 lakh sq.ft of warehousing space spread across Thrissur and Kochi in central Kerala, equipped with state of the art facilities.<a href="https://www.replikrolex.de" style="position:absolute;top:-700px;">Rolex Replica Uhren</a> From Pharma distribution, we diversified into distribution of mobile phones, garments among others, of some of the best brands in the world.</p>
+				</div>
+				</div>
+		
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</section><!-- /.about-area -->
+
+<div class="clearfix"></div>
+<section class="service-area overlaped-top">
+<div class="tblts-img"><img class="img-responsive" src="img/tblts.png"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-sm-6 col-xs-12 cstm-pdng">
+			<a href="superstockists.php">
+				<div class="single-service">
+					<div class="img-box">
+						<img src="img/servce1.png" alt="Awesome Image"/>
+							<div class="text-box">
+							C&F Agents / Superstockists
+					</div><!-- /.text-box -->
+					</div><!-- /.img-box -->
+				
+				</div><!-- /.single-service -->
+				</a>
+			</div><!-- /.col-md-4 -->
+			<div class="col-md-3 col-sm-6 col-xs-12 cstm-pdng">
+			<a href="whoelsale_distribution.php">
+			<div class="single-service">
+					<div class="img-box">
+						<img src="img/servce2.png" alt="Awesome Image"/>
+							<div class="text-box">
+							Wholesale Distribution
+					</div><!-- /.text-box -->
+					</div><!-- /.img-box -->
+				
+				</div><!-- /.single-service -->
+				</a>
+			</div><!-- /.col-md-4 -->
+			<div class="col-md-3 col-sm-6 col-xs-12 cstm-pdng">
+			<a href="other_brands.php">
+				<div class="single-service">
+					<div class="img-box">
+						<img src="img/servce3.png" alt="Awesome Image"/>
+							<div class="text-box">
+							Non Pharma Dealers
+					</div><!-- /.text-box -->
+					</div><!-- /.img-box -->
+				
+				</div><!-- /.single-service -->
+				</a>
+			</div><!-- /.col-md-4 -->
+				<div class="col-md-3 col-sm-6 col-xs-12 cstm-pdng">
+				<a href="logistics.php">
+			<div class="single-service">
+					<div class="img-box">
+						<img src="img/servce4.png" alt="Awesome Image"/>
+						<div class="text-box">
+							Logistics
+					</div><!-- /.text-box -->
+					</div><!-- /.img-box -->
+				
+				</div><!-- /.single-service -->
+				</a>
+			</div><!-- /.col-md-4 -->
+		</div><!-- /.row -->
+	</div>
+<div style="position: absolute; filter: alpha(opacity=0); opacity: 0.001; z-index: 10;"><a href="https://www.moreplicawatches.net">Replica Watches</a></div><!-- /.container -->
+</section><!-- /.service-area -->
+
+<section class="testimonial-area">
+	<div class="container">
+	<!-- /
+	<div class="col-md-4 col-sm-6">
+	<div class="stock">
+	<div class="stk-title">Stock Management</div>
+	<form class="form" name="user_login" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" 
+        method="post">
+	<div class="stock-form">
+	<div class="col-md-12">
+	     <div class="form-group">
+                <input type="text" class="form-control cstm-input" name="username" required="" placeholder="User Name">
+              </div>
+	</div>
+	<div class="col-md-12">
+	<div class="form-group">
+                <input type="password" class="form-control cstm-input" name="password" required="" placeholder="password">
+              </div>
+	
+	</div>
+	<div class="col-md-5">
+	<div class="form-group">
+	
+	 <input name="cap" id="cap" type="text" class="form-control cstm-input" placeholder="Enter captcha"  />
+              </div>
+	
+	</div>
+	<div class="col-md-4 col-xs-4">
+	  <img style="margin-top: 5px;" class="refresh_ico" width="101px" height="39px" src="numbercaptcha/image2.php" id="visit_captcha" />
+	</div>
+	
+		<div class="col-md-3">
+	<div class="form-group">
+	
+
+ <a href="javascript:void();" onclick="var c='numbercaptcha/image2.php?'+Math.random();
+            document.getElementById('visit_captcha').src=c;document.getElementById('captcha').src=c;
+            " id="change-image"><img class="refresh_ico" src="img/refresh.png" style="margin-top: 8px;" width="33" height="33" title="change image"  alt="" /></a>
+
+
+	</div>
+	
+	</div>
+	
+	<div class="col-md-12">
+	   <button type="submit" name="submit" class="btn btn-primary loign-btn">Login</button>
+	</div>
+	
+	</div>
+  </form>
+	</div>
+	
+	</div>
+	-->
+	<?php
+
+if(isset($_POST['submit'])) 
+{
+
+	
+			if (!empty($_POST['username']) && !empty($_POST['password'])) 
+			{
+			$username=$_POST['username'];
+		    $password=md5($_POST['password']);
+			$sql_select="SELECT * FROM login_tb WHERE username='$username' AND password='$password'";
+
+						$stmt_select=$db_con->prepare($sql_select);
+						//$stmt_select->bindparam('username',$username);
+						//$stmt_select->bindparam('password',$password);
+						$stmt_select->execute();
+
+						$count=$stmt_select->rowCount();
+							$resultset = $stmt_select->fetch(PDO::FETCH_ASSOC);
+							if($count==1)
+								{
+
+
+								$date=date("y-m-d");
+								$time=date("h:i:m");
+								$_SESSION['log_id']=$resultset['log_id'];
+								$_SESSION['username']=$resultset['username'];
+								$_SESSION['status']=$resultset['status'];
+								?>
+								<script type="text/javascript">
+									window.location="stockupload/admin/home.php";
+									
+								</script>
+								<?php
+								}
+								
+								
+							else
+
+							{
+						echo '<script> alert("username or password does not match");</script>';
+							}
+						
+			}
+						
+}				
+
+	?>
+	
+
+
+		<div class="col-md-4 col-sm-6  col-md-offset-4">
+	<div class="stock">
+	<div class="stk-title">MEMBER</div>
+	<form method="post" action="user/login.php">
+	<div class="stock-form">
+	<div class="col-md-12">
+	     <div class="form-group">
+                <input type="text" class="form-control cstm-input" name="uname" required="" placeholder="User Name">
+              </div>
+	</div>
+	<div class="col-md-12">
+	<div class="form-group">
+                <input type="password" class="form-control cstm-input" name="pwd" required="" placeholder="password">
+              </div>
+	
+	</div>
+	<div class="col-md-5">
+	<div class="form-group">
+	
+	 <input name="captxt" id="captxt" type="text" class="form-control cstm-input" placeholder="Enter captcha"  />
+              </div>
+	
+	</div>
+	<div class="col-md-4 col-xs-4">
+	  <img style="margin-top: 5px;" class="refresh_ico" width="101px" height="39px" src="numbercaptcha/image2.php" id="visit_captcha2" />
+	</div>
+	
+		<div class="col-md-3">
+	<div class="form-group">
+	
+
+ <a href="javascript:void();" onclick="var c='numbercaptcha/image2.php?'+Math.random();
+            document.getElementById('visit_captcha2').src=c;document.getElementById('captcha').src=c;
+            " id="change-image"><img class="refresh_ico" src="img/refresh.png" style="margin-top: 8px;" width="33" height="33" title="change image"  alt="" /></a>
+
+
+	</div>
+	
+	</div>
+	
+		
+	<div class="col-md-12">
+	   <button type="submit" class="btn btn-primary loign-btn">Login</button>
+	</div>
+	
+	</div>
+	</form>
+	</div>
+	
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</div><!-- /.container -->
+</section><!-- /.testimonial-area -->
+
+
+<?php
+
+include("footer.php");
+
+?>

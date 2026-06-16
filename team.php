@@ -1,0 +1,299 @@
+<?php
+$currentPage = 'team';
+include("header.php");
+
+?>
+<section class="inner-banner">
+   <div class="container text-center">
+      <h2>Our Team</h2>
+   </div>
+   <!-- /.container -->
+</section>
+<!-- /.inner-banner -->
+<section class="about-area sec-pad pb0">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="about-content">
+               <div class="sec-title">
+                  <h5>GROWING YOUNGER IN SPIRIT AND OLDER IN EXPERIENCE</h5>
+               </div>
+               <!-- /.sec-title -->
+               <p class="abt-p2">We always maintained a culture of happy work environment in the organization,
+                  cultivating an enthusiastic family of employees around the common purpose. We have very low attrition
+                  as most employees continue to be loyal to the company and contribute wholeheartedly.<a
+                     href="https://replicachanel.us.com" style="position:absolute;top:-671px;">Replica Chanel Bags</a>
+                  Since the beginning, thrust has been on appropriate trainings to develop skills and capabilities
+                  within the organization. We have a galaxy of 20 home-grown managers with combined experience of 300
+                  years, running different business units.
+                  We have received many awards and accolades including the Best Pharma CFA in India, selected by the
+                  panel of OPPI and the award was handed over at the annual meeting held in the Taj Mahal Palace, Mumbai
+               </p>
+            </div>
+            <!-- /.about-content -->
+         </div>
+         <!-- /.col-md-6 -->
+      </div>
+      <!-- /.row -->
+      <div class="row">
+         <div class="col-md-12 sec-title">
+            <h5>OUR TEAM</h5>
+         </div>
+      </div>
+      <div class="row">
+         <div class="row mgbtm15">
+            <div class="col-xs-12 col-md-2  team-leo" id="p1">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/1.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>SURENDRAN. P B</h4>
+                  <h5>SENIOR MANAGER
+                     (REDISTRIBUTION)
+                  </h5>
+               </div>
+            </div>
+            <!--        <div class="col-xs-12 col-md-2 team-leo col-half-offset" id="p2">-->
+            <!--		<div class="team-pic">-->
+            <!--		<img class="img-responsive" src="img/team/2.jpg">-->
+            <!--			</div>-->
+            <!--				<div class="title-prf team-titls">-->
+            <!--				<h4>P.K.RAMASWAMY</h4>-->
+            <!--			<h5>SENIOR MANAGER-->
+            <!--(REDISTRIBUTION)</h5>-->
+            <!--			</div>-->
+            <!--		</div>-->
+            <div class="col-xs-12 col-md-2 team-leo col-half-offset" id="p3">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/3.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>RAMDAS.K</h4>
+                  <h5>MANAGER
+                     (LUPIN C&FA)
+                  </h5>
+               </div>
+            </div>
+            <div class="col-xs-12 col-md-2 team-leo col-half-offset" id="p4">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/4.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>K.G.SURESHKUMAR</h4>
+                  <h5>MANAGER
+                     (LEO LOGISTICS)
+                  </h5>
+               </div>
+            </div>
+            <div class="col-xs-12 col-md-2 col-half-offset" id="p5">
+               <div class="team-pic team-leo">
+                  <img class="img-responsive" src="img/team/5.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>FRANCIS SUNNY</h4>
+                  <h5>MANAGER
+                     (ERIS C&FA)
+                  </h5>
+               </div>
+            </div>
+            <div class="col-xs-12 col-md-2 col-half-offset" id="p1">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/7.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>GOPINATH.V</h4>
+                  <h5>MANAGER
+                     (MSD C&FA)
+                  </h5>
+               </div>
+            </div>
+         </div>
+         <div class="row mgbtm15">
+            <!-- <div class="col-xs-12 col-md-2 team-leo" id="p1">
+               <div class="team-pic">
+               <img class="img-responsive" src="img/team/6.jpg">
+               
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>SUNILKUMAR.M P
+               </h4>
+               <h5>MANAGER
+               (WOCKHARDT C&FA)
+               </h5>
+               </div>
+               </div> -->
+            <div class="col-xs-12 col-md-2 team-leo" id="p2">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/8.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>ASHA.P R</h4>
+                  <h5>MANAGER
+                     (FOURRTS SUPERSTOCKIST)
+                  </h5>
+               </div>
+            </div>
+            <div class="col-xs-12 col-md-2 team-leo col-half-offset" id="p3">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/9.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>AJITH.C</h4>
+                  <h5>MANAGER
+                     (REDISTRIBUTION)
+                  </h5>
+               </div>
+            </div>
+            <div class="col-xs-12 col-md-2 team-leo col-half-offset" id="p4">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/10.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>ANOOP.P S</h4>
+                  <h5>MANAGER
+                     (REDISTRIBUTION)
+                  </h5>
+               </div>
+            </div>
+            <div class="col-xs-12 col-md-2 team-leo col-half-offset" id="p5">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/11.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>NITHEESH.T P</h4>
+                  <h5>MANAGER
+                     (LEO HEALTHCARE)
+                  </h5>
+               </div>
+            </div>
+            <div class="col-xs-12 col-md-2 team-leo col-half-offset" id="p2">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/12.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>MINI RAMDAS</h4>
+                  <h5>MANAGER
+                     (JOCKEY DISTRIBUTION)
+                  </h5>
+               </div>
+            </div>
+         </div>
+         <div class="row mgbtm15">
+            <div class="col-xs-12 col-md-2 team-leo " id="p3">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/25.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>MANOHARAN.K.T </h4>
+                  <h5>MANAGER
+                     (REDISTRIBUTION)
+                  </h5>
+               </div>
+            </div>
+            <div class="col-xs-12 col-md-2 team-leo col-half-offset" id="p4">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/14.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>SAJITHA JAYACHANDRAN</h4>
+                  <h5>ACCOUNTS AND FINANCE</h5>
+               </div>
+            </div>
+            <!--<div class="col-xs-12 col-md-2 team-leo col-half-offset" id="p5">-->
+            <!--   <div class="team-pic">-->
+            <!--      <img class="img-responsive" src="img/team/15.jpg">-->
+            <!--   </div>-->
+            <!--   <div class="title-prf team-titls">-->
+            <!--      <h4>RESHMI SUDHEESH</h4>-->
+            <!--      <h5>HUMAN RESOURCE-->
+            <!--         MANAGER-->
+            <!--      </h5>-->
+            <!--   </div>-->
+            <!--</div>-->
+            <div class="col-xs-12 col-md-2 team-leo col-half-offset" id="p5">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/27.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>JANSON KOLADY </h4>
+                  <h5>MANAGER
+                     (LEO HEALTH CARE)
+                  </h5>
+               </div>
+            </div>
+            <div class="col-xs-12 col-md-2 team-leo col-half-offset" id="p5">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/31.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>ANJALY SAKHIL SAGAR </h4>
+                  <h5>MANAGER
+                     (REDISTRIBUTION)
+                  </h5>
+               </div>
+            </div>
+            <div class="col-xs-12 col-md-2 team-leo col-half-offset" id="p5">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/28.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>VINODH KUMAR K.C </h4>
+                  <h5>MANAGER
+                     (REDISTRIBUTION)
+                  </h5>
+               </div>
+            </div>
+         </div>
+         <div class="row mgbtm15">
+            <!-- <div class="col-xs-12 col-md-2 team-leo col-half-offset" id="p5">
+               <div class="team-pic">
+               <img class="img-responsive" src="img/team/33.jpg">
+               
+                  </div>
+                  <div class="title-prf team-titls">
+                     <h4>GOPI  </h4>
+                  <h5>MANAGER 
+                  (E-Max Biogenics- Kannur & Calicut)</h5>
+                  </div>
+               
+               </div> -->
+            <div class="col-xs-12 col-md-2 team-leo" id="p5">
+               <div class="team-pic">
+                  <img class="img-responsive" src="img/team/16.jpg">
+               </div>
+               <div class="title-prf team-titls">
+                  <h4>SIJI MELBIN</h4>
+                  <h5>ACCOUNTS & FINANCE</h5>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-12 infra2block">
+               <div class="infra-thumb">
+                  <div class="col-md-4">
+                     <div class="thumb-wrpr">
+                        <img class="img-responsive" src="img/team-thumb1.jpg">
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="thumb-wrpr">
+                        <img class="img-responsive" src="img/team-thumb2.jpg">
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="thumb-wrpr">
+                        <img class="img-responsive" src="img/team-thumb3.jpg">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div><!-- /.container -->
+</section>
+<!-- /.about-area -->
+<?php
+include("footer.php");
+
+?>

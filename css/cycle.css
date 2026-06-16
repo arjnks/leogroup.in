@@ -1,0 +1,17 @@
+
+pre { text-align: left; overflow: visible }
+code { background-color: #ffc }
+pre code { background-color: #eee }
+
+.pics { height: 115px; width: 600px; padding:0; margin:10px 0px 0px 0px; overflow: hidden; }
+
+.pics div  { height: 115px; width: 600px; padding:0; overflow: hidden; }
+
+.pics img { height: 105px; width: 180px; margin:0px 5px 0px 5px; border: 1px solid #999999; padding:3px; background-color: #eee; top:0; left:0 }
+.pics img {
+	-moz-border-radius: 10px; -webkit-border-radius: 10px;
+}
+
+.nav { margin:40px 0px 0px -12px; position:absolute; z-index:9990;  }
+
+.nav img { width:18px; height:33px;}

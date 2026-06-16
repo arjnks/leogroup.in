@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infrastructure | Leo Group</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .editorial-header { padding: 12rem 5% 5rem; border-bottom: 1px solid var(--border-color); }
+    .editorial-header h1 { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 400; font-style: italic; letter-spacing: -1px; margin: 0; line-height: 1.1; }
+    .grid-container { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border-color); }
+    .grid-item { border-right: 1px solid var(--border-color); padding: 5rem 5%; }
+    .grid-item:last-child { border-right: none; }
+    .grid-image { width: 100%; height: 400px; background-size: cover; background-position: center; margin-bottom: 2rem; background-color: #E4E4E7; filter: grayscale(100%); }
+    .grid-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
+    .infra-list { margin-top: 2rem; padding-left: 1.5rem; }
+    .infra-list li { margin-bottom: 1rem; font-size: 1.1rem; line-height: 1.6; color: var(--text-main); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="logo.png" alt="Leo Group Logo" class="logo"></a>
+    <nav>
+      <ul>
+        <li class="dropdown">
+          <a href="about.html">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html">Our Legacy</a></li>
+            <li><a href="team.html">Leadership</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="services.html">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="services.html">Overview</a></li>
+            <li><a href="logistics.html">Logistics</a></li>
+            <li><a href="specialty.html">Specialty Drugs</a></li>
+          </ul>
+        </li>
+        <li><a href="infrastructure.html" style="color: var(--primary-color);">Infrastructure</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="btn btn-outline">Partner With Us</a>
+  </header>
+
+  <section class="editorial-header">
+    <div class="reveal-mask"><h1 class="reveal-text">Space & Scale.</h1></div>
+  </section>
+
+  <section class="grid-container">
+    <div class="grid-item fade-up">
+      <div class="grid-image" style="background-image: url('assets/legacy_img/infra-thumb1.jpg');"></div>
+      <div class="reveal-mask"><h2 class="grid-title reveal-text">Optimum Storage</h2></div>
+      <ul class="infra-list">
+        <li>State of the art warehouse of 2 lakh sq. ft.</li>
+        <li>Complete cold chain maintained through walk-in coolers and air-conditioned storage.</li>
+        <li>24-hour power backup ensured through generators and UPS systems.</li>
+        <li>Dust-free warehouse culture with air curtains fixed at main entrances.</li>
+      </ul>
+    </div>
+    <div class="grid-item fade-up" style="transition-delay: 100ms;">
+      <div class="grid-image" style="background-image: url('assets/legacy_img/infra-thumb2.jpg');"></div>
+      <div class="reveal-mask"><h2 class="grid-title reveal-text">Unmatched Security</h2></div>
+      <ul class="infra-list">
+        <li>Completely secure environment with 24/7 CCTV coverage and security personnel.</li>
+        <li>Equipped with high-quality material handling equipment.</li>
+        <li>Best-in-class fire safety and pest control measures in place.</li>
+        <li>Backed by a fiercely loyal workforce—10 employees have served over 30 years, 15 over 20 years, and 50+ over a decade.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="fade-up">
+        <div class="footer-logo">Leo Group.</div>
+        <p style="font-family: var(--font-body); font-size: var(--text-sm);">Kerala's trusted warehousing and distribution partner since 1980.</p>
+      </div>
+      <div class="fade-up">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="infrastructure.html">Infrastructure</a></li>
+        </ul>
+      </div>
+      <div class="fade-up">
+        <h4>Contact</h4>
+        <ul style="font-family: var(--font-body);">
+          <li>NH Bypass Junction, Kuttanellur</li>
+          <li>Thrissur — 680014, Kerala</li>
+          <li>+91 9605 068 517</li>
+          <li>sidharthram@leogroup.in</li>
+        </ul>
+      </div>
+      <div class="fade-up">
+        <h4>Location</h4>
+        <iframe src="https://maps.google.com/maps?q=10.523034,76.211738&z=14&output=embed" width="100%" height="140" style="border:0; filter: invert(90%) hue-rotate(180deg) grayscale(80%);" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+    <div class="footer-bottom fade-up">
+      &copy; 2024 LEO GROUP | DESIGNED BY AGENCY
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
