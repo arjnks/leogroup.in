@@ -391,6 +391,15 @@ nav ul li.dropdown:hover .dropdown-menu { display: flex; opacity: 1; transform: 
     .dropdown-menu li a { font-size: 1rem; padding: 0; color: var(--text-muted); }
     .dropdown-menu li a:hover { background: transparent; padding-left: 0; color: var(--primary-color); }
     
+    /* Internal Pages Layout Fixes */
+    .service-row { grid-template-columns: 1fr !important; }
+    .service-col { border-right: none !important; border-bottom: 1px solid var(--border-color); padding: 3rem 5% !important; }
+    .grid-container { grid-template-columns: 1fr !important; }
+    .grid-item { border-right: none !important; border-bottom: 1px solid var(--border-color); padding: 3rem 5% !important; }
+    .team-grid-top { grid-template-columns: 1fr !important; padding: 2rem 5% !important; }
+    .team-grid-ops { grid-template-columns: 1fr !important; padding: 2rem 5% !important; }
+    .albums-grid { grid-template-columns: 1fr !important; }
+    
     /* Missing old classes for safety */
     .content-grid { grid-template-columns: 1fr !important; }
     .content-left { border-right: none !important; border-bottom: 1px solid var(--border-color); padding: 3rem 5% !important; }
