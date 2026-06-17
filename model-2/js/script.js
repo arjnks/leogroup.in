@@ -94,6 +94,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Hollow Text Fill Effect
+  gsap.utils.toArray('.hollow-text').forEach(text => {
+    ScrollTrigger.create({
+      trigger: text,
+      start: "top 85%",
+      onEnter: () => text.classList.add('filled')
+    });
+  });
+
+  // Number Counter Animation
+  gsap.utils.toArray('.stat-item h3').forEach(el => {
+    let text = el.innerText;
+    let num = parseFloat(text.replace(/[^0-9.]/g, ''));
+    let suffix = text.replace(/[0-9.]/g, '');
+    
+    if(!isNaN(num)) {
+      let obj = { val: 0 };
+      gsap.to(obj, {
+        val: num,
+        duration: 2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%"
+        },
+        onUpdate: () => {
+          let displayNum = obj.val % 1 === 0 ? Math.floor(obj.val) : obj.val.toFixed(1);
+          // Preserve 0 padding for numbers like '02'
+          if(text.startsWith('0') && displayNum < 10 && displayNum > 0) {
+            displayNum = '0' + displayNum;
+          }
+          el.innerText = displayNum + suffix;
+        }
+      });
+    }
+  });
+
   // Parallax Service Cards (Asymmetrical scrolling offset)
   gsap.utils.toArray('.parallax-card').forEach((card, i) => {
     gsap.to(card, {
