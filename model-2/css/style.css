@@ -23,6 +23,14 @@
   --text-6xl: clamp(3.5rem, 2.8rem + 4.5vw, 6.5rem);
 }
 
+body.dark-mode {
+  --primary-color: #E2E8F0;
+  --accent-color: #FC8181;
+  --bg-color: #121212;
+  --text-main: #F7FAFC;
+  --text-muted: #A0AEC0;
+}
+
 /* Lenis */
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
@@ -76,7 +84,7 @@ button, .btn, input, textarea, select { cursor: none !important; }
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: var(--bg-color);
   font-family: var(--font-mono);
   font-size: var(--text-3xl);
   font-weight: 300;
@@ -146,6 +154,12 @@ header {
   backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100;
   border-bottom: 1px solid rgba(226, 232, 240, 0.5);
   gap: 2rem;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+body.dark-mode header {
+  background-color: rgba(18, 18, 18, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logo { max-height: 45px; width: auto; display: block; flex-shrink: 0; object-fit: contain; }

@@ -175,4 +175,25 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: "none"
     });
   });
+
+  // Dark Mode Toggle Logic
+  const darkToggle = document.getElementById('dark-mode-toggle');
+  if (darkToggle) {
+    // Check local storage for preference
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      darkToggle.innerText = '☀';
+    }
+
+    darkToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        darkToggle.innerText = '☀';
+      } else {
+        localStorage.setItem('theme', 'light');
+        darkToggle.innerText = '☾';
+      }
+    });
+  }
 });
