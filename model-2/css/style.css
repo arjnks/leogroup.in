@@ -157,6 +157,11 @@ header {
   transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
+/* Mobile Menu Toggle */
+.mobile-menu-toggle { display: none; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 200; }
+.hamburger span { width: 25px; height: 2px; background-color: var(--primary-color); transition: transform 0.3s ease, opacity 0.3s ease; }
+
 body.dark-mode header {
   background-color: rgba(18, 18, 18, 0.95);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -337,10 +342,27 @@ nav ul li.dropdown:hover .dropdown-menu { display: flex; opacity: 1; transform: 
     .footer-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
     
     /* Header and Nav */
-    header { flex-wrap: wrap; justify-content: center; padding: 1rem 5%; position: relative !important; gap: 1rem; }
-    nav ul { flex-wrap: wrap; justify-content: center; gap: 0.8rem; margin-top: 0.5rem; }
-    nav a { font-size: 0.7rem; }
-    .logo { max-height: 35px; }
+    header { justify-content: space-between; padding: 1.5rem 5%; position: sticky !important; top: 0; }
+    .hamburger { display: flex; order: 2; }
+    nav { 
+        position: absolute; top: 100%; left: 0; width: 100%; 
+        background: var(--bg-color); border-bottom: 1px solid rgba(0,0,0,0.05);
+        padding: 2rem 5%; flex-direction: column; align-items: flex-start;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Hidden */
+        transition: clip-path 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        order: 3;
+    }
+    body.dark-mode nav { border-bottom-color: rgba(255,255,255,0.1); }
+    nav ul { flex-direction: column; align-items: flex-start; gap: 1.5rem; width: 100%; margin-top: 0; }
+    nav a { font-size: 1.2rem; }
+    header > .btn { display: none; } /* Hide partner button on mobile */
+    .logo { max-height: 35px; order: 1; }
+    
+    .mobile-menu-toggle:checked ~ nav { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+    .mobile-menu-toggle:checked ~ .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mobile-menu-toggle:checked ~ .hamburger span:nth-child(2) { opacity: 0; }
+    .mobile-menu-toggle:checked ~ .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    
     .hero-btns { flex-direction: column; align-items: stretch; gap: 1rem; }
     .hero h1 { font-size: 3.5rem !important; }
     .service-card { padding: 2rem 1.5rem !important; }
