@@ -81,7 +81,7 @@ if ($stmt->rowCount() > 0) {
         $_SESSION['logged_in'] = true;
 
         http_response_code(200);
-        echo json_encode(["message" => "Authentication successful", "redirect" => "dashboard.html"]);
+        echo json_encode(["message" => "Authentication successful", "redirect" => "../user/"]);
     } else {
         // Record failed attempt
         $insert_attempt = "INSERT INTO login_attempts (ip_address, attempt_time) VALUES (:ip, NOW())";
