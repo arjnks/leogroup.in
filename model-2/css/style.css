@@ -75,6 +75,12 @@ button, .btn, input, textarea, select { cursor: none !important; }
   mix-blend-mode: difference;
 }
 
+@media (pointer: coarse), (max-width: 768px) {
+  .custom-cursor { display: none !important; }
+  a, button, .btn, input, textarea, select { cursor: pointer !important; }
+  body { cursor: auto !important; }
+}
+
 /* Preloader */
 #preloader {
   position: fixed;
