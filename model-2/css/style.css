@@ -367,6 +367,24 @@ nav ul li.dropdown:hover .dropdown-menu { display: flex; opacity: 1; transform: 
     .hero h1 { font-size: 3.5rem !important; }
     .service-card { padding: 2rem 1.5rem !important; }
     
+    /* Mobile Dropdown Fix */
+    nav ul li.dropdown:hover .dropdown-menu { display: none; } /* override desktop */
+    .dropdown-menu { 
+        position: static; 
+        display: flex; 
+        opacity: 1; 
+        transform: translateY(0); 
+        pointer-events: auto; 
+        background: transparent; 
+        border: none; 
+        padding: 0; 
+        padding-left: 1.5rem; 
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+    .dropdown-menu li a { font-size: 1rem; padding: 0; color: var(--text-muted); }
+    .dropdown-menu li a:hover { background: transparent; padding-left: 0; color: var(--primary-color); }
+    
     /* Missing old classes for safety */
     .content-grid { grid-template-columns: 1fr !important; }
     .content-left { border-right: none !important; border-bottom: 1px solid var(--border-color); padding: 3rem 5% !important; }
