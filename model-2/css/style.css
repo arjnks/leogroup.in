@@ -162,6 +162,27 @@ body.dark-mode header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+body.dark-mode .service-card,
+body.dark-mode .legacy,
+body.dark-mode .cta-banner {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+body.dark-mode .stats,
+body.dark-mode .stat-item,
+body.dark-mode .service-card,
+body.dark-mode .legacy,
+body.dark-mode .cta-banner {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .service-number {
+  color: rgba(255, 255, 255, 0.05);
+}
+body.dark-mode .service-card:hover .service-number {
+  color: rgba(255, 255, 255, 0.1);
+}
+
 .logo { max-height: 45px; width: auto; display: block; flex-shrink: 0; object-fit: contain; }
 nav { flex: 1; display: flex; justify-content: flex-end; }
 nav ul { display: flex; list-style: none; gap: 1.5rem; align-items: center; margin: 0; padding: 0; }
