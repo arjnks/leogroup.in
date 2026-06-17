@@ -337,8 +337,10 @@ nav ul li.dropdown:hover .dropdown-menu { display: flex; opacity: 1; transform: 
     .footer-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
     
     /* Header and Nav */
-    header { flex-wrap: wrap; justify-content: center; padding: 1rem 5%; }
-    nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1rem; }
+    header { flex-wrap: wrap; justify-content: center; padding: 1rem 5%; position: relative !important; gap: 1rem; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 0.8rem; margin-top: 0.5rem; }
+    nav a { font-size: 0.7rem; }
+    .logo { max-height: 35px; }
     .hero-btns { flex-direction: column; align-items: stretch; gap: 1rem; }
     .hero h1 { font-size: 3.5rem !important; }
     .service-card { padding: 2rem 1.5rem !important; }
