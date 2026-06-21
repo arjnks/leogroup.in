@@ -18,7 +18,6 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
     const mapContainer = document.getElementById('map-container');
     if (!mapContainer) return;
 
-    // Inject SVG directly
     const svgString = \`${svgContent}\`;
     mapContainer.innerHTML = svgString;
     setupMapAnimation();
@@ -32,10 +31,9 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
         svg.style.maxHeight = '700px';
         svg.style.filter = 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))'; 
 
-        // Base map style - 100% uniform, absolutely no patches
         const paths = svg.querySelectorAll('path');
         paths.forEach(p => {
-            p.style.fill = '#1a1a1a'; // Dark solid background
+            p.style.fill = '#1a1a1a'; 
             p.style.fillOpacity = '1'; 
             p.style.stroke = '#333333'; 
             p.style.strokeWidth = '1px';
@@ -44,7 +42,6 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
 
         const kTarget = svg.querySelector('#kl') || svg.querySelector('#kerala');
         if (kTarget) {
-            // Do NOT color the state path. Leave the map completely uniform.
             setTimeout(() => {
                 drawEmergingLines(svg, kTarget);
             }, 500);
@@ -52,7 +49,14 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
     }
 
     function drawEmergingLines(svg, sourceElement) {
-        const targets = ['mh', 'ka', 'tn', 'dl', 'wb', 'gj'];
+        const targets = [
+            { id: 'mh', name: 'Maharashtra' },
+            { id: 'ka', name: 'Karnataka' },
+            { id: 'tn', name: 'Tamil Nadu' },
+            { id: 'dl', name: 'Delhi' },
+            { id: 'wb', name: 'West Bengal' },
+            { id: 'gj', name: 'Gujarat' }
+        ];
         
         const sourceBox = sourceElement.getBBox();
         const startX = sourceBox.x + (sourceBox.width / 2);
@@ -61,20 +65,29 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
         const lineGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
         svg.appendChild(lineGroup);
 
-        // Origin dot (Kerala)
         const originDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
         originDot.setAttribute("cx", startX);
         originDot.setAttribute("cy", startY);
         originDot.setAttribute("r", "6");
-        originDot.setAttribute("fill", "#f5d40c"); // ITS yellow
+        originDot.setAttribute("fill", "#f5d40c"); 
         originDot.setAttribute("filter", "url(#glowStrong)");
         lineGroup.appendChild(originDot);
 
-        targets.forEach((targetId, index) => {
-            const target = svg.querySelector('#' + targetId);
+        const originText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        originText.setAttribute("x", startX + 15);
+        originText.setAttribute("y", startY + 5);
+        originText.setAttribute("fill", "#f5d40c");
+        originText.setAttribute("font-family", "var(--font-mono), monospace");
+        originText.setAttribute("font-size", "14px");
+        originText.setAttribute("font-weight", "600");
+        originText.setAttribute("letter-spacing", "1px");
+        originText.textContent = "KERALA HUB";
+        lineGroup.appendChild(originText);
+
+        targets.forEach((targetInfo, index) => {
+            const target = svg.querySelector('#' + targetInfo.id);
             if (!target) return;
 
-            // Do NOT color the target state path to avoid the patchy/vitiligo look
             const targetBox = target.getBBox();
             const endX = targetBox.x + (targetBox.width / 2);
             const endY = targetBox.y + (targetBox.height / 2);
@@ -105,6 +118,18 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
             destDot.style.opacity = "0";
             lineGroup.appendChild(destDot);
 
+            const destText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            destText.setAttribute("x", endX + 10);
+            destText.setAttribute("y", endY + 4);
+            destText.setAttribute("fill", "#fafbff");
+            destText.setAttribute("font-family", "var(--font-mono), monospace");
+            destText.setAttribute("font-size", "12px");
+            destText.setAttribute("font-weight", "500");
+            destText.setAttribute("letter-spacing", "0.5px");
+            destText.style.opacity = "0";
+            destText.textContent = targetInfo.name.toUpperCase();
+            lineGroup.appendChild(destText);
+
             if (window.gsap) {
                 const length = streakPath.getTotalLength();
                 
@@ -121,13 +146,13 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
                     { strokeDashoffset: 0, duration: 1.5, ease: "power1.inOut" }
                 );
 
-                tl.fromTo(destDot, 
+                tl.fromTo([destDot, destText], 
                     { opacity: 0, scale: 0.5, transformOrigin: "center" }, 
-                    { opacity: 1, scale: 1.5, duration: 0.2, ease: "power2.out" }, 
+                    { opacity: 1, scale: 1, duration: 0.2, ease: "power2.out" }, 
                     "-=0.2"
                 );
 
-                tl.to([streakPath, destDot], { opacity: 0, duration: 0.5, ease: "power1.in" }, "+=0.1");
+                tl.to([streakPath, destDot, destText], { opacity: 0, duration: 0.5, ease: "power1.in" }, "+=1.0");
 
                 tl.to({}, { duration: 0.5 });
             }
@@ -137,4 +162,4 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
 `;
 
 fs.writeFileSync('js/map.js', jsTemplate, 'utf8');
-console.log('Successfully removed state highlighting to fix vitiligo effect');
+console.log('Successfully updated map.js to include text labels');
