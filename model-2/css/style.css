@@ -43,37 +43,13 @@ html.lenis, html.lenis body { height: auto; }
 body {
   font-family: var(--font-body); background-color: var(--bg-color);
   color: var(--text-main); line-height: 1.7; overflow-x: hidden;
-  cursor: none;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><circle cx='8' cy='8' r='6' fill='%23111' /></svg>") 8 8, auto;
 }
 
 h1, h2, h3, h4, h5, h6, .logo { font-family: var(--font-heading); font-weight: 400; }
-a { text-decoration: none; color: inherit; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); cursor: none; }
+a { text-decoration: none; color: inherit; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><circle cx='8' cy='8' r='6' fill='%23111' /></svg>") 8 8, pointer; }
 img { max-width: 100%; display: block; }
-button, .btn, input, textarea, select { cursor: none !important; }
-
-/* Custom Magnetic Cursor */
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  pointer-events: none;
-  z-index: 10000;
-  transform: translate(-50%, -50%);
-  mix-blend-mode: difference;
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
-  will-change: transform, width, height;
-}
-
-.custom-cursor.hover {
-  width: 60px;
-  height: 60px;
-  background-color: #fff;
-  mix-blend-mode: difference;
-}
+button, .btn, input, textarea, select { cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><circle cx='8' cy='8' r='6' fill='%23111' /></svg>") 8 8, pointer !important; }
 
 @media (pointer: coarse), (max-width: 768px) {
   .custom-cursor { display: none !important; }

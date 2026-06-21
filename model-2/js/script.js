@@ -18,24 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   gsap.ticker.lagSmoothing(0);
 
-  // 1.5 Custom Magnetic Cursor
-  const cursor = document.createElement('div');
-  cursor.classList.add('custom-cursor');
-  document.body.appendChild(cursor);
-
-  const xSet = gsap.quickSetter(cursor, "x", "px");
-  const ySet = gsap.quickSetter(cursor, "y", "px");
-
-  window.addEventListener('mousemove', (e) => {
-    xSet(e.clientX);
-    ySet(e.clientY);
-  });
-
-  const interactables = document.querySelectorAll('a, button, .btn, input, textarea, select');
-  interactables.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.classList.add('hover');
-    });
+  
     el.addEventListener('mouseleave', () => {
       cursor.classList.remove('hover');
     });
