@@ -28,12 +28,23 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
             p.style.transition = 'all 0.3s ease';
         });
 
-        const kerala = svg.querySelector('#kl'); // The ID in @svg-maps/india for Kerala is usually kl! Let's handle 'kerala' or 'kl'
         const kTarget = svg.querySelector('#kl') || svg.querySelector('#kerala');
         if (kTarget) {
             kTarget.style.fill = 'var(--primary-color)';
             kTarget.style.filter = 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.5))';
             
+            // Continuous pulse on Kerala
+            if (window.gsap) {
+                gsap.to(kTarget, {
+                    fill: "#ff7b00", // slightly brighter orange
+                    filter: "drop-shadow(0 0 15px rgba(255, 123, 0, 0.8))",
+                    duration: 1.5,
+                    yoyo: true,
+                    repeat: -1,
+                    ease: "sine.inOut"
+                });
+            }
+
             setTimeout(() => {
                 drawEmergingLines(svg, kTarget);
             }, 100);
@@ -71,44 +82,38 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
             path.setAttribute("fill", "none");
             path.setAttribute("stroke", "var(--primary-color)");
             path.setAttribute("stroke-width", "1.5");
-            path.setAttribute("stroke-dasharray", "5, 5");
-            path.style.opacity = "0";
+            path.setAttribute("stroke-dasharray", "4, 6"); // Dashed line for marching ants
+            path.style.opacity = "0.7";
 
             lineGroup.appendChild(path);
 
-            if (window.gsap && window.ScrollTrigger) {
-                const length = path.getTotalLength();
-                gsap.set(path, { strokeDasharray: length, strokeDashoffset: length, opacity: 1 });
-                
+            // Add the glowing dot
+            const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            dot.setAttribute("cx", endX);
+            dot.setAttribute("cy", endY);
+            dot.setAttribute("r", "3");
+            dot.setAttribute("fill", "#fff");
+            dot.style.filter = "drop-shadow(0 0 5px rgba(255,255,255,0.8))";
+            lineGroup.appendChild(dot);
+
+            if (window.gsap) {
+                // Continuous marching ants animation
                 gsap.to(path, {
-                    strokeDashoffset: 0,
-                    duration: 1.5,
-                    ease: "power2.out",
-                    delay: index * 0.2,
-                    scrollTrigger: {
-                        trigger: "#map-container",
-                        start: "top 70%",
-                    }
+                    strokeDashoffset: -20, // Moves the dashes along the path continuously
+                    duration: 1,
+                    ease: "none",
+                    repeat: -1
                 });
 
-                const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                dot.setAttribute("cx", endX);
-                dot.setAttribute("cy", endY);
-                dot.setAttribute("r", "3");
-                dot.setAttribute("fill", "#fff");
-                dot.style.opacity = "0";
-                lineGroup.appendChild(dot);
-
+                // Continuous pulse on the dot
                 gsap.to(dot, {
-                    opacity: 1,
                     scale: 1.5,
-                    duration: 0.5,
-                    delay: (index * 0.2) + 1.2,
-                    transformOrigin: "center center",
-                    scrollTrigger: {
-                        trigger: "#map-container",
-                        start: "top 70%",
-                    }
+                    opacity: 0.6,
+                    duration: 1 + Math.random() * 0.5, // slightly offset the pulses
+                    yoyo: true,
+                    repeat: -1,
+                    transformOrigin: "center",
+                    ease: "sine.inOut"
                 });
             }
         });
@@ -117,4 +122,4 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
 `;
 
 fs.writeFileSync('js/map.js', jsTemplate, 'utf8');
-console.log('Successfully wrote js/map.js');
+console.log('Successfully wrote js/map.js with live animations');
