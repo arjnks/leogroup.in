@@ -196,4 +196,31 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       });
   }
+
+  // --- HORIZONTAL SCROLL LOGIC ---
+  const pinContainer = document.querySelector('.pin-container');
+  const scaleWrapper = document.querySelector('.scale-wrapper');
+  
+  if (pinContainer && scaleWrapper) {
+      // Calculate how far to translate X
+      function getScrollAmount() {
+          let wrapperWidth = scaleWrapper.scrollWidth;
+          return -(wrapperWidth - window.innerWidth);
+      }
+
+      const tween = gsap.to(scaleWrapper, {
+          x: getScrollAmount,
+          ease: "none"
+      });
+
+      ScrollTrigger.create({
+          trigger: pinContainer,
+          start: "top top",
+          end: () => `+=${getScrollAmount() * -1}`,
+          pin: true,
+          animation: tween,
+          scrub: 1,
+          invalidateOnRefresh: true
+      });
+  }
 });

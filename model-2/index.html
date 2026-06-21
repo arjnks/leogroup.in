@@ -84,93 +84,78 @@
     </div>
   </section>
 
-  <section class="portfolios" style="background-color: var(--primary-color); color: #fff; padding: 10rem 5%; border: none; display: block;">
-    <div class="reveal-mask">
-      <span class="eyebrow reveal-text" style="color: #fff; opacity: 0.5;">MAJOR HIGHLIGHTS</span>
-    </div>
-    <div class="reveal-mask" style="margin-bottom: 5rem;">
-      <h2 class="section-heading reveal-text" style="color: #fff;">Strategic Portfolios.</h2>
-    </div>
-    
-    <div class="services-grid" style="gap: 5rem;">
-      <div class="fade-up">
-        <!-- Placeholder for Jockey Logo; user will provide -->
-        <div style="height: 80px; display: flex; align-items: flex-end; margin-bottom: 2rem;">
-          <img src="assets/jockey_logo.png" alt="Jockey Logo" style="height: 60px; filter: brightness(0) invert(1);">
-        </div>
-        <h4 style="font-size: var(--text-3xl); font-family: var(--font-heading); margin-bottom: 1.5rem;">Jockey Distribution</h4>
-        <p style="font-size: var(--text-base); color: #A0AEC0; font-weight: 300; line-height: 1.8;">Leo Group (headquartered in Kuttanellur, Thrissur, with facilities in Ollur) is the official Super Distributor for Jockey (Page Industries) across all of Kerala.</p>
-        <p style="font-size: var(--text-base); color: #A0AEC0; font-weight: 300; line-height: 1.8; margin-top: 1rem;">This prestigious portfolio is managed directly under the Leo Group Team by specific managers dedicated solely to Jockey distribution operations.</p>
-      </div>
-      <div class="fade-up">
-        <!-- Placeholder for GE Logo; user will provide -->
-        <div style="height: 80px; display: flex; align-items: flex-end; margin-bottom: 1rem;">
-          <img src="assets/ge_logo.png" alt="GE Logo" style="height: 80px;">
-        </div>
-        <h4 style="font-size: var(--text-3xl); font-family: var(--font-heading); margin-bottom: 1.5rem;">Healthcare Logistics</h4>
-        <p style="font-size: var(--text-base); color: #A0AEC0; font-weight: 300; line-height: 1.8;">Managed by dedicated divisions like Leo Healthcare and Leo Logistics, ensuring seamless supply chain management throughout Kerala.</p>
-        <p style="font-size: var(--text-base); color: #A0AEC0; font-weight: 300; line-height: 1.8; margin-top: 1rem;">Corporate medical equipment distribution for GE HealthCare in Kerala is primarily managed by regional medical equipment dealers like Wipro GE Healthcare (which has branch offices in Kochi and Thrissur).</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="services">
-    <div class="reveal-mask">
+  <section class="services pin-container">
+    <div class="reveal-mask" style="padding: 0 5%;">
       <span class="eyebrow reveal-text">WHAT WE DO</span>
     </div>
-    <div class="reveal-mask">
+    <div class="reveal-mask" style="padding: 0 5%;">
       <h2 class="section-heading reveal-text" style="margin-bottom: 0;">End-to-End Distribution,</h2>
     </div>
-    <div class="reveal-mask" style="margin-bottom: 6rem;">
+    <div class="reveal-mask" style="padding: 0 5%; margin-bottom: 4rem;">
       <h2 class="section-heading reveal-text" style="margin-bottom: 0;">Built for Scale.</h2>
     </div>
     
     <style>
-      .scale-wrapper { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border-color); margin-top: 4rem; }
-      .scale-item { display: flex; align-items: flex-start; justify-content: space-between; padding: 4rem 0; border-bottom: 1px solid var(--border-color); transition: background-color 0.4s ease; }
+      .pin-container { overflow: hidden; height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+      .scale-wrapper { display: flex; flex-direction: row; gap: 0; border-top: 1px solid var(--border-color); width: fit-content; padding-left: 5vw; padding-right: 5vw; }
+      .scale-item { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 4rem; width: 60vw; border-right: 1px solid var(--border-color); border-bottom: none; transition: background-color 0.4s ease; height: 50vh; }
       .scale-item:hover { background-color: #fafafa; }
-      .scale-number { font-family: 'DM Mono', monospace; font-size: 6rem; line-height: 0.8; font-weight: 300; color: #E4E4E7; width: 15%; transition: color 0.4s ease; }
-      .scale-content { width: 80%; display: flex; justify-content: space-between; align-items: flex-start; }
-      .scale-content h3 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 300; margin: 0; width: 40%; color: var(--text-color); line-height: 1.1; }
-      .scale-content p { font-size: 1.1rem; color: #666; width: 50%; margin: 0; line-height: 1.8; }
+      .scale-number { font-family: 'DM Mono', monospace; font-size: 6rem; line-height: 0.8; font-weight: 300; color: #E4E4E7; margin-bottom: 3rem; transition: color 0.4s ease; }
+      .scale-content { display: flex; flex-direction: column; gap: 1.5rem; }
+      .scale-content h3 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 300; margin: 0; color: var(--text-color); line-height: 1.1; }
+      .scale-content p { font-size: 1.2rem; color: #666; margin: 0; line-height: 1.8; }
       .scale-item:hover .scale-number { color: var(--primary-color); }
       
       @media (max-width: 768px) {
-          .scale-item { flex-direction: column; padding: 3rem 0; gap: 2rem; }
-          .scale-number { font-size: 4rem; width: 100%; }
-          .scale-content { width: 100%; flex-direction: column; gap: 1.5rem; align-items: flex-start; }
-          .scale-content h3 { width: 100%; font-size: 2.5rem; }
-          .scale-content p { width: 100%; }
+          .scale-item { width: 85vw; padding: 2rem; height: auto; }
+          .scale-number { font-size: 4rem; margin-bottom: 1.5rem; }
+          .scale-content h3 { font-size: 2.5rem; }
       }
     </style>
     
     <div class="scale-wrapper">
-      <div class="scale-item fade-up">
+      <div class="scale-item">
         <div class="scale-number">01</div>
         <div class="scale-content">
           <h3>Carrying &<br>Forwarding</h3>
           <p>Operating as the central distribution nexus for India's premier pharmaceutical brands. We maintain massive, rigorously monitored cold-chain facilities capable of handling highly sensitive biologicals at state-wide scale.</p>
         </div>
       </div>
-      <div class="scale-item fade-up">
+      <div class="scale-item">
         <div class="scale-number">02</div>
         <div class="scale-content">
           <h3>Wholesale<br>Network</h3>
           <p>A relentless delivery apparatus reaching thousands of retail pharmacies and general trade outlets daily. Our logistics framework ensures same-day dispatch and zero stock-outs across critical healthcare sectors.</p>
         </div>
       </div>
-      <div class="scale-item fade-up">
+      <div class="scale-item">
         <div class="scale-number">03</div>
         <div class="scale-content">
           <h3>Last-Mile<br>Redistribution</h3>
           <p>Unmatched geographical penetration. We bridge the gap between major urban centers and remote rural markets, ensuring that life-saving products reach tier-2 and tier-3 towns with flawless consistency.</p>
         </div>
       </div>
-      <div class="scale-item fade-up">
+      <div class="scale-item">
         <div class="scale-number">04</div>
         <div class="scale-content">
           <h3>Diversified<br>Logistics</h3>
           <p>Beyond pharmaceuticals, our logistical mastery extends across multiple high-value categories, including mobile electronics, garments, and FMCG, leveraging our 2 Lakh Sq.Ft infrastructure.</p>
+        </div>
+      </div>
+      <div class="scale-item" style="background-color: var(--primary-color);">
+        <div class="scale-number" style="color: rgba(255,255,255,0.2);">05</div>
+        <div class="scale-content">
+          <div style="margin-bottom: 1rem;"><img src="assets/jockey_logo.png" alt="Jockey Logo" style="height: 40px; filter: brightness(0) invert(1);"></div>
+          <h3 style="color: #fff;">Jockey<br>Distribution</h3>
+          <p style="color: #eee;">Leo Group is the official Super Distributor for Jockey (Page Industries) across all of Kerala, managed directly under the Leo Group Team by specific managers dedicated solely to Jockey operations.</p>
+        </div>
+      </div>
+      <div class="scale-item" style="background-color: var(--primary-color);">
+        <div class="scale-number" style="color: rgba(255,255,255,0.2);">06</div>
+        <div class="scale-content">
+          <div style="margin-bottom: 1rem;"><img src="assets/ge_logo.png" alt="GE Logo" style="height: 40px; filter: brightness(0) invert(1);"></div>
+          <h3 style="color: #fff;">Healthcare<br>Logistics</h3>
+          <p style="color: #eee;">Managed by dedicated divisions like Leo Healthcare and Leo Logistics, corporate medical equipment distribution for GE HealthCare in Kerala is primarily managed by regional medical equipment dealers.</p>
         </div>
       </div>
     </div>
