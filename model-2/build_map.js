@@ -6,6 +6,10 @@ const svgContent = `<svg viewBox='${map.viewBox}'>
             <feGaussianBlur stdDeviation="3" result="blur" />
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
         </filter>
+        <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="5" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
     </defs>
     ${map.locations.map(l => `<path id='${l.id}' name='${l.name}' d='${l.path}'></path>`).join('')}
 </svg>`;
@@ -28,24 +32,19 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
         svg.style.maxHeight = '700px';
         svg.style.filter = 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))'; 
 
-        // Base map style
+        // Base map style - 100% uniform, absolutely no patches
         const paths = svg.querySelectorAll('path');
         paths.forEach(p => {
             p.style.fill = '#1a1a1a'; // Dark solid background
-            p.style.fillOpacity = '1'; // Solid, no transparency leaking the white page
+            p.style.fillOpacity = '1'; 
             p.style.stroke = '#333333'; 
             p.style.strokeWidth = '1px';
             p.style.strokeLinecap = 'round';
-            p.style.transition = 'fill 0.5s ease, fill-opacity 0.5s ease';
         });
 
         const kTarget = svg.querySelector('#kl') || svg.querySelector('#kerala');
         if (kTarget) {
-            // Source region lit up (Solid yellow)
-            kTarget.style.fill = '#f5d40c';
-            kTarget.style.fillOpacity = '1';
-            kTarget.style.stroke = '#f5d40c';
-            
+            // Do NOT color the state path. Leave the map completely uniform.
             setTimeout(() => {
                 drawEmergingLines(svg, kTarget);
             }, 500);
@@ -62,16 +61,20 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
         const lineGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
         svg.appendChild(lineGroup);
 
+        // Origin dot (Kerala)
+        const originDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        originDot.setAttribute("cx", startX);
+        originDot.setAttribute("cy", startY);
+        originDot.setAttribute("r", "6");
+        originDot.setAttribute("fill", "#f5d40c"); // ITS yellow
+        originDot.setAttribute("filter", "url(#glowStrong)");
+        lineGroup.appendChild(originDot);
+
         targets.forEach((targetId, index) => {
             const target = svg.querySelector('#' + targetId);
             if (!target) return;
 
-            // Target region lit up (Calculated solid color: 20% yellow over 80% #1a1a1a)
-            // This prevents the white page background from showing through
-            target.style.fill = '#463f17';
-            target.style.fillOpacity = '1';
-            target.style.stroke = '#5c521a';
-
+            // Do NOT color the target state path to avoid the patchy/vitiligo look
             const targetBox = target.getBBox();
             const endX = targetBox.x + (targetBox.width / 2);
             const endY = targetBox.y + (targetBox.height / 2);
@@ -134,4 +137,4 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
 `;
 
 fs.writeFileSync('js/map.js', jsTemplate, 'utf8');
-console.log('Successfully updated map.js to use solid fill colors');
+console.log('Successfully removed state highlighting to fix vitiligo effect');
