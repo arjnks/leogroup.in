@@ -75,7 +75,7 @@ const newServicesHTML = `<section class="services pin-container">
         <div class="scale-number">06</div>
         <div class="scale-content">
           <h3>Diversified<br>Logistics</h3>
-          <p>Beyond pharmaceuticals, our logistical mastery extends across multiple high-value categories, including mobile electronics, garments, and FMCG, leveraging our 2 Lakh Sq.Ft infrastructure.</p>
+          <p>Beyond pharmaceuticals, our logistical mastery extends across multiple high-value categories, including mobile electronics, , and FMCG, leveraging our 2 Lakh Sq.Ft infrastructure.</p>
         </div>
       </div>
     </div>
