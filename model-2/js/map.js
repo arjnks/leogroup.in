@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <stop offset="100%" stop-color="#aa771c" />
         </linearGradient>
         <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="5" result="blur" />
+            <feGaussianBlur stdDeviation="4" result="blur" />
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
         </filter>
         <filter id="keralaGlow" x="-50%" y="-50%" width="200%" height="200%">
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
             p.style.fill = '#111113'; 
             p.style.stroke = '#27272a';
             p.style.strokeWidth = '0.5px';
-            p.style.transition = 'all 0.5s ease';
         });
 
         const kTarget = svg.querySelector('#kl') || svg.querySelector('#kerala');
@@ -89,8 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const midY = (startY + endY) / 2;
             
             // Elegant, sweeping arcs
-            const curveOffsetX = (startY - endY) * 0.3;
-            const curveOffsetY = (endX - startX) * 0.3;
+            const curveOffsetX = (startY - endY) * 0.25;
+            const curveOffsetY = (endX - startX) * 0.25;
 
             const pathData = `M ${startX} ${startY} Q ${midX + curveOffsetX} ${midY + curveOffsetY} ${endX} ${endY}`;
 
@@ -103,12 +102,12 @@ document.addEventListener('DOMContentLoaded', () => {
             basePath.style.opacity = "0.2";
             lineGroup.appendChild(basePath);
 
-            // The animated light streak
+            // The animated light streak (Draw line from start to finish perfectly)
             const streakPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
             streakPath.setAttribute("d", pathData);
             streakPath.setAttribute("fill", "none");
             streakPath.setAttribute("stroke", "url(#neoGold)"); 
-            streakPath.setAttribute("stroke-width", "2");
+            streakPath.setAttribute("stroke-width", "2.5");
             streakPath.setAttribute("stroke-linecap", "round");
             streakPath.setAttribute("filter", "url(#goldGlow)");
             lineGroup.appendChild(streakPath);
@@ -117,51 +116,51 @@ document.addEventListener('DOMContentLoaded', () => {
             const destDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
             destDot.setAttribute("cx", endX);
             destDot.setAttribute("cy", endY);
-            destDot.setAttribute("r", "4");
+            destDot.setAttribute("r", "3");
             destDot.setAttribute("fill", "#fcf6ba");
             destDot.setAttribute("filter", "url(#goldGlow)");
-            destDot.style.opacity = "0.4";
+            destDot.style.opacity = "0";
             lineGroup.appendChild(destDot);
 
             if (window.gsap) {
                 const length = streakPath.getTotalLength();
-                const streakLength = length * 0.4; // The streak covers 40% of the path at a time
                 
-                streakPath.setAttribute("stroke-dasharray", `${streakLength}, ${length * 2}`);
-                streakPath.setAttribute("stroke-dashoffset", length + streakLength);
+                // Configure dash to be exactly the length of the path
+                streakPath.setAttribute("stroke-dasharray", length);
+                streakPath.setAttribute("stroke-dashoffset", length); // Hidden initially
 
                 // Elegant master timeline for each path
                 const tl = gsap.timeline({
                     repeat: -1,
-                    delay: index * 0.5 // perfectly orchestrated stagger
+                    delay: index * 0.6 // smoothly orchestrated stagger
                 });
 
-                // Streak flowing gracefully
-                tl.to(streakPath, {
-                    strokeDashoffset: -streakLength,
-                    duration: 3, // Slow and deliberate
-                    ease: "sine.inOut"
-                });
+                // Line gracefully draws from Kerala exactly to the destination dot
+                tl.fromTo(streakPath, 
+                    { strokeDashoffset: length, opacity: 1 }, 
+                    { strokeDashoffset: 0, duration: 2.5, ease: "power2.inOut" }
+                );
 
-                // The destination dot blooms softly when the streak hits
-                // The streak hits roughly at 60% of the duration
-                tl.to(destDot, {
-                    r: 6,
-                    opacity: 1,
-                    duration: 0.6,
-                    ease: "power2.out"
-                }, 1.8);
+                // Exactly when the line finishes drawing (hits the end), the destination dot blooms brightly
+                tl.fromTo(destDot, 
+                    { r: 3, opacity: 0 }, 
+                    { r: 6, opacity: 1, duration: 0.5, ease: "power2.out" }, 
+                    "-=0.5" // Start blooming right before the line finishes
+                );
+
+                // Fade out the line gracefully
+                tl.to(streakPath, { opacity: 0, duration: 1 }, "+=0.2");
 
                 // Dot fades back down
                 tl.to(destDot, {
-                    r: 4,
-                    opacity: 0.4,
-                    duration: 1.2,
+                    r: 3,
+                    opacity: 0,
+                    duration: 1.5,
                     ease: "power2.inOut"
-                }, ">");
+                }, "-=0.8");
 
                 // Rest period before next cycle
-                tl.to({}, { duration: 1 });
+                tl.to({}, { duration: 0.5 });
             }
         });
     }
