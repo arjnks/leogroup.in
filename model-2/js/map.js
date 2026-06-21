@@ -22,13 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
         svg.style.width = '100%';
         svg.style.height = '100%';
         svg.style.maxHeight = '700px';
-        svg.style.filter = 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))'; // Soft shadow to lift it off the white page
+        svg.style.filter = 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))'; 
 
-        // its4logistics base map style, but adapted as a dark object so light lines show up
+        // Base map style
         const paths = svg.querySelectorAll('path');
         paths.forEach(p => {
-            p.style.fill = '#1a1a1a'; // Dark solid background for the map itself
-            p.style.stroke = '#333333'; // Slightly lighter wireframe
+            p.style.fill = '#1a1a1a'; // Dark solid background
+            p.style.fillOpacity = '1'; // Solid, no transparency leaking the white page
+            p.style.stroke = '#333333'; 
             p.style.strokeWidth = '1px';
             p.style.strokeLinecap = 'round';
             p.style.transition = 'fill 0.5s ease, fill-opacity 0.5s ease';
@@ -36,9 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const kTarget = svg.querySelector('#kl') || svg.querySelector('#kerala');
         if (kTarget) {
-            // Source region lit up
+            // Source region lit up (Solid yellow)
             kTarget.style.fill = '#f5d40c';
-            kTarget.style.fillOpacity = '0.8';
+            kTarget.style.fillOpacity = '1';
             kTarget.style.stroke = '#f5d40c';
             
             setTimeout(() => {
@@ -61,10 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = svg.querySelector('#' + targetId);
             if (!target) return;
 
-            // Target region lit up like serviced areas in its4logistics
-            target.style.fill = '#f5d40c';
-            target.style.fillOpacity = '0.3';
-            target.style.stroke = '#f5d40c';
+            // Target region lit up (Calculated solid color: 20% yellow over 80% #1a1a1a)
+            // This prevents the white page background from showing through
+            target.style.fill = '#463f17';
+            target.style.fillOpacity = '1';
+            target.style.stroke = '#5c521a';
 
             const targetBox = target.getBBox();
             const endX = targetBox.x + (targetBox.width / 2);
@@ -78,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const pathData = `M ${startX} ${startY} Q ${midX + curveOffsetX} ${midY + curveOffsetY} ${endX} ${endY}`;
 
-            // The animated light streak (pure white fast lines like its4logistics)
             const streakPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
             streakPath.setAttribute("d", pathData);
             streakPath.setAttribute("fill", "none");
@@ -88,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             streakPath.setAttribute("filter", "url(#glow)");
             lineGroup.appendChild(streakPath);
 
-            // Node dot
             const destDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
             destDot.setAttribute("cx", endX);
             destDot.setAttribute("cy", endY);
@@ -106,26 +106,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const tl = gsap.timeline({
                     repeat: -1,
-                    delay: index * 0.3 // Faster stagger for high-tech feel
+                    delay: index * 0.3 
                 });
 
-                // Fast, energetic line draw
                 tl.fromTo(streakPath, 
                     { strokeDashoffset: length, opacity: 1 }, 
                     { strokeDashoffset: 0, duration: 1.5, ease: "power1.inOut" }
                 );
 
-                // Quick node flash
                 tl.fromTo(destDot, 
                     { opacity: 0, scale: 0.5, transformOrigin: "center" }, 
                     { opacity: 1, scale: 1.5, duration: 0.2, ease: "power2.out" }, 
                     "-=0.2"
                 );
 
-                // Fade out line and node together
                 tl.to([streakPath, destDot], { opacity: 0, duration: 0.5, ease: "power1.in" }, "+=0.1");
 
-                // Rest period
                 tl.to({}, { duration: 0.5 });
             }
         });
