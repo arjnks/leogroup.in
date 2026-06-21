@@ -5,19 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inject SVG directly
     const svgString = `<svg viewBox='0 0 612 696'>
     <defs>
-        <linearGradient id="neoGold" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#bf953f" />
-            <stop offset="25%" stop-color="#fcf6ba" />
-            <stop offset="50%" stop-color="#b38728" />
-            <stop offset="75%" stop-color="#fbf5b7" />
-            <stop offset="100%" stop-color="#aa771c" />
+        <!-- its4logistics yellow/gold -->
+        <linearGradient id="itsYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f5d40c" />
+            <stop offset="100%" stop-color="#f5d40c" />
         </linearGradient>
-        <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="4" result="blur" />
-            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
-        <filter id="keralaGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="8" result="blur" />
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
         </filter>
     </defs>
@@ -33,36 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
         svg.style.width = '100%';
         svg.style.height = '100%';
         svg.style.maxHeight = '700px';
-        svg.style.filter = 'drop-shadow(0 0 30px rgba(0,0,0,0.8))';
 
+        // its4logistics base map style
         const paths = svg.querySelectorAll('path');
         paths.forEach(p => {
-            p.style.fill = '#111113'; 
-            p.style.stroke = '#27272a';
-            p.style.strokeWidth = '0.5px';
+            p.style.fill = 'none'; 
+            p.style.stroke = '#42453f'; // Dark grey wireframe
+            p.style.strokeWidth = '1px';
+            p.style.strokeLinecap = 'round';
+            p.style.transition = 'fill 0.5s ease, fill-opacity 0.5s ease';
         });
 
         const kTarget = svg.querySelector('#kl') || svg.querySelector('#kerala');
         if (kTarget) {
-            kTarget.style.fill = 'url(#neoGold)';
-            kTarget.style.filter = 'url(#keralaGlow)';
-            kTarget.style.stroke = '#fff';
-            kTarget.style.strokeWidth = '0.5px';
+            // Source region lit up
+            kTarget.style.fill = '#f5d40c';
+            kTarget.style.fillOpacity = '0.5';
+            kTarget.style.stroke = '#f5d40c';
             
-            // Refined, slow luxurious pulse (breathing effect)
-            if (window.gsap) {
-                gsap.to(kTarget, {
-                    opacity: 0.7,
-                    duration: 3,
-                    yoyo: true,
-                    repeat: -1,
-                    ease: "sine.inOut"
-                });
-            }
-
             setTimeout(() => {
                 drawEmergingLines(svg, kTarget);
-            }, 300);
+            }, 500);
         }
     }
 
@@ -80,6 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = svg.querySelector('#' + targetId);
             if (!target) return;
 
+            // Target region lit up like serviced areas in its4logistics
+            target.style.fill = '#f5d40c';
+            target.style.fillOpacity = '0.15';
+            target.style.stroke = '#f5d40c';
+
             const targetBox = target.getBBox();
             const endX = targetBox.x + (targetBox.width / 2);
             const endY = targetBox.y + (targetBox.height / 2);
@@ -87,79 +77,59 @@ document.addEventListener('DOMContentLoaded', () => {
             const midX = (startX + endX) / 2;
             const midY = (startY + endY) / 2;
             
-            // Elegant, sweeping arcs
-            const curveOffsetX = (startY - endY) * 0.25;
-            const curveOffsetY = (endX - startX) * 0.25;
+            const curveOffsetX = (startY - endY) * 0.2;
+            const curveOffsetY = (endX - startX) * 0.2;
 
             const pathData = `M ${startX} ${startY} Q ${midX + curveOffsetX} ${midY + curveOffsetY} ${endX} ${endY}`;
 
-            // Faint baseline path
-            const basePath = document.createElementNS("http://www.w3.org/2000/svg", "path");
-            basePath.setAttribute("d", pathData);
-            basePath.setAttribute("fill", "none");
-            basePath.setAttribute("stroke", "#b38728");
-            basePath.setAttribute("stroke-width", "0.5");
-            basePath.style.opacity = "0.2";
-            lineGroup.appendChild(basePath);
-
-            // The animated light streak (Draw line from start to finish perfectly)
+            // The animated light streak (pure white fast lines like its4logistics)
             const streakPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
             streakPath.setAttribute("d", pathData);
             streakPath.setAttribute("fill", "none");
-            streakPath.setAttribute("stroke", "url(#neoGold)"); 
-            streakPath.setAttribute("stroke-width", "2.5");
+            streakPath.setAttribute("stroke", "#ffffff"); 
+            streakPath.setAttribute("stroke-width", "2");
             streakPath.setAttribute("stroke-linecap", "round");
-            streakPath.setAttribute("filter", "url(#goldGlow)");
+            streakPath.setAttribute("filter", "url(#glow)");
             lineGroup.appendChild(streakPath);
 
-            // Destination dot
+            // Node dot
             const destDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
             destDot.setAttribute("cx", endX);
             destDot.setAttribute("cy", endY);
-            destDot.setAttribute("r", "3");
-            destDot.setAttribute("fill", "#fcf6ba");
-            destDot.setAttribute("filter", "url(#goldGlow)");
+            destDot.setAttribute("r", "4");
+            destDot.setAttribute("fill", "#ffffff");
+            destDot.setAttribute("filter", "url(#glow)");
             destDot.style.opacity = "0";
             lineGroup.appendChild(destDot);
 
             if (window.gsap) {
                 const length = streakPath.getTotalLength();
                 
-                // Configure dash to be exactly the length of the path
                 streakPath.setAttribute("stroke-dasharray", length);
-                streakPath.setAttribute("stroke-dashoffset", length); // Hidden initially
+                streakPath.setAttribute("stroke-dashoffset", length); 
 
-                // Elegant master timeline for each path
                 const tl = gsap.timeline({
                     repeat: -1,
-                    delay: index * 0.6 // smoothly orchestrated stagger
+                    delay: index * 0.3 // Faster stagger for high-tech feel
                 });
 
-                // Line gracefully draws from Kerala exactly to the destination dot
+                // Fast, energetic line draw
                 tl.fromTo(streakPath, 
                     { strokeDashoffset: length, opacity: 1 }, 
-                    { strokeDashoffset: 0, duration: 2.5, ease: "power2.inOut" }
+                    { strokeDashoffset: 0, duration: 1.5, ease: "power1.inOut" }
                 );
 
-                // Exactly when the line finishes drawing (hits the end), the destination dot blooms brightly
+                // Quick node flash
                 tl.fromTo(destDot, 
-                    { r: 3, opacity: 0 }, 
-                    { r: 6, opacity: 1, duration: 0.5, ease: "power2.out" }, 
-                    "-=0.5" // Start blooming right before the line finishes
+                    { opacity: 0, scale: 0.5, transformOrigin: "center" }, 
+                    { opacity: 1, scale: 1.5, duration: 0.2, ease: "power2.out" }, 
+                    "-=0.2"
                 );
 
-                // Fade out the line gracefully
-                tl.to(streakPath, { opacity: 0, duration: 1 }, "+=0.2");
+                // Fade out line and node together
+                tl.to([streakPath, destDot], { opacity: 0, duration: 0.5, ease: "power1.in" }, "+=0.1");
 
-                // Dot fades back down
-                tl.to(destDot, {
-                    r: 3,
-                    opacity: 0,
-                    duration: 1.5,
-                    ease: "power2.inOut"
-                }, "-=0.8");
-
-                // Rest period before next cycle
+                // Rest period
                 tl.to({}, { duration: 0.5 });
             }
         });
