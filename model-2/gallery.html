@@ -11,7 +11,7 @@
     
     .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; padding: 5rem 5%; }
     .gallery-item { position: relative; overflow: hidden; background: #E4E4E7; aspect-ratio: 1; }
-    .gallery-image { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease; filter: grayscale(100%); }
+    .gallery-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease; filter: grayscale(100%); }
     .gallery-item:hover .gallery-image { transform: scale(1.05); filter: grayscale(0%); }
     
     /* Variable sizing for editorial feel */
@@ -94,9 +94,9 @@
 
     <div class="album-card fade-up" onclick="showGallery('album-1')">
       <div class="album-stack">
-        <img src="assets/albums/cat_1/1220151024_094110.jpg" class="skw-1">
-        <img src="assets/albums/cat_1/12IMG_0306.JPG" class="skw-3">
-        <img src="assets/albums/cat_1/12IMG_0764.JPG" class="skw-2">
+        <img loading="lazy" src="assets/albums/cat_1/1220151024_094110.jpg" class="skw-1">
+        <img loading="lazy" src="assets/albums/cat_1/12IMG_0306.JPG" class="skw-3">
+        <img loading="lazy" src="assets/albums/cat_1/12IMG_0764.JPG" class="skw-2">
       </div>
       <div class="album-title">
         <h4>Tour</h4>
@@ -105,8 +105,8 @@
     
     <div class="album-card fade-up" onclick="showGallery('album-7')">
       <div class="album-stack">
-        <img src="assets/albums/cat_7/7014.jpg" class="skw-1">
-        <img src="assets/albums/cat_7/75.jpg" class="skw-3">
+        <img loading="lazy" src="assets/albums/cat_7/7014.jpg" class="skw-1">
+        <img loading="lazy" src="assets/albums/cat_7/75.jpg" class="skw-3">
       </div>
       <div class="album-title">
         <h4>Our Warehouse</h4>
@@ -115,9 +115,9 @@
     
     <div class="album-card fade-up" onclick="showGallery('album-8')">
       <div class="album-stack">
-        <img src="assets/albums/cat_8/816.jpg" class="skw-1">
-        <img src="assets/albums/cat_8/820151024_094110.jpg" class="skw-3">
-        <img src="assets/albums/cat_8/8BM2R0415.JPG" class="skw-2">
+        <img loading="lazy" src="assets/albums/cat_8/816.jpg" class="skw-1">
+        <img loading="lazy" src="assets/albums/cat_8/820151024_094110.jpg" class="skw-3">
+        <img loading="lazy" src="assets/albums/cat_8/8BM2R0415.JPG" class="skw-2">
       </div>
       <div class="album-title">
         <h4>Team & Events</h4>
@@ -126,9 +126,9 @@
     
     <div class="album-card fade-up" onclick="showGallery('album-6')">
       <div class="album-stack">
-        <img src="assets/albums/cat_6/615.jpg" class="skw-1">
-        <img src="assets/albums/cat_6/69.jpg" class="skw-3">
-        <img src="assets/albums/cat_6/6BM2R1478.JPG" class="skw-2">
+        <img loading="lazy" src="assets/albums/cat_6/615.jpg" class="skw-1">
+        <img loading="lazy" src="assets/albums/cat_6/69.jpg" class="skw-3">
+        <img loading="lazy" src="assets/albums/cat_6/6BM2R1478.JPG" class="skw-2">
       </div>
       <div class="album-title">
         <h4>Logistics</h4>
@@ -137,9 +137,9 @@
     
     <div class="album-card fade-up" onclick="showGallery('album-9')">
       <div class="album-stack">
-        <img src="assets/albums/cat_9/93.jpg" class="skw-1">
-        <img src="assets/albums/cat_9/9IMG_20170323_123318_1.jpg" class="skw-3">
-        <img src="assets/albums/cat_9/9IMG_20170323_123400.jpg" class="skw-2">
+        <img loading="lazy" src="assets/albums/cat_9/93.jpg" class="skw-1">
+        <img loading="lazy" src="assets/albums/cat_9/9IMG_20170323_123318_1.jpg" class="skw-3">
+        <img loading="lazy" src="assets/albums/cat_9/9IMG_20170323_123400.jpg" class="skw-2">
       </div>
       <div class="album-title">
         <h4>Honours</h4>
@@ -153,35 +153,35 @@
         <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 300; margin: 0; color: var(--primary-color);">Tour</h2>
       </div>
       <div class="gallery-grid">
-    <div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/1220151024_094110.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_0306.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_0764.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_0843.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_0847.JPG');"></div></div>
-<div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_0862.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_0864.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_0867.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_0915.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_1170.JPG');"></div></div>
-<div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_1235.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_1257.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_1274.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_1338.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_1642.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_1670.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_1675.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_1677.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_1717.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_1729.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_1772.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_1878.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_1897.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_2429.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_2461.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_2629.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_2906.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_2989.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_1/12IMG_3013.JPG');"></div></div>
+    <div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/1220151024_094110.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_0306.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_0764.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_0843.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_0847.JPG"></div>
+<div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_0862.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_0864.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_0867.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_0915.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_1170.JPG"></div>
+<div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_1235.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_1257.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_1274.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_1338.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_1642.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_1670.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_1675.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_1677.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_1717.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_1729.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_1772.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_1878.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_1897.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_2429.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_2461.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_2629.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_2906.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_2989.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_1/12IMG_3013.JPG"></div>
 
       </div>
     </div>
@@ -192,25 +192,25 @@
         <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 300; margin: 0; color: var(--primary-color);">Our Warehouse</h2>
       </div>
       <div class="gallery-grid">
-    <div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7014.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/75.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7BM2R1484.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7BM2R1513.JPG');"></div></div>
-<div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7BM2R1529.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7BM2R1573.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7BM2R1574.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7BM2R1575.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7BM2R3374.JPG');"></div></div>
-<div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7BM2R3435.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7BM2R3437.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7BM2R3439.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7CAM00841.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7CAM00843.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7CAM00844.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7CAM00846.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7Kuttanellur 1.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7LLP phase 3.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_7/7Pazhaya Nadakavu.jpg');"></div></div>
+    <div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7014.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/75.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7BM2R1484.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7BM2R1513.JPG"></div>
+<div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7BM2R1529.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7BM2R1573.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7BM2R1574.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7BM2R1575.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7BM2R3374.JPG"></div>
+<div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7BM2R3435.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7BM2R3437.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7BM2R3439.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7CAM00841.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7CAM00843.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7CAM00844.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7CAM00846.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7Kuttanellur 1.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7LLP phase 3.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_7/7Pazhaya Nadakavu.jpg"></div>
 
       </div>
     </div>
@@ -221,46 +221,46 @@
         <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 300; margin: 0; color: var(--primary-color);">Team & Events</h2>
       </div>
       <div class="gallery-grid">
-    <div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/816.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/820151024_094110.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8BM2R0415.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8BM2R0451.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8BM2R0616.JPG');"></div></div>
-<div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8BM2R0619.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8BM2R1436.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8BM2R1625.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8BM2R3382.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8BM2R3394.JPG');"></div></div>
-<div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8BM2R3398.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8BM2R3454.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8BM2R3456.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8BM2R3504.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_0847.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_0862.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_0867.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_0915.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_1338.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_1642.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_1675.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_1717.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_1729.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_1772.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_1897.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_2065.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_2092.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_2099.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_2106.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_2128.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_2132.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_2461.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_2629.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8IMG_2906.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8LEO (1).JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8LEO (4).JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8LEO (7).JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8LEO (8).JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8LEO (9).JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_8/8leo old pic.png');"></div></div>
+    <div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/816.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/820151024_094110.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8BM2R0415.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8BM2R0451.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8BM2R0616.JPG"></div>
+<div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8BM2R0619.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8BM2R1436.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8BM2R1625.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8BM2R3382.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8BM2R3394.JPG"></div>
+<div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8BM2R3398.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8BM2R3454.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8BM2R3456.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8BM2R3504.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_0847.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_0862.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_0867.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_0915.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_1338.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_1642.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_1675.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_1717.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_1729.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_1772.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_1897.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_2065.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_2092.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_2099.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_2106.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_2128.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_2132.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_2461.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_2629.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8IMG_2906.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8LEO (1).JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8LEO (4).JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8LEO (7).JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8LEO (8).JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8LEO (9).JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_8/8leo old pic.png"></div>
 
       </div>
     </div>
@@ -271,18 +271,18 @@
         <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 300; margin: 0; color: var(--primary-color);">Logistics</h2>
       </div>
       <div class="gallery-grid">
-    <div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><div class="gallery-image" style="background-image: url('assets/albums/cat_6/615.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_6/69.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_6/6BM2R1478.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_6/6BM2R1565.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_6/6BM2R1571.JPG');"></div></div>
-<div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><div class="gallery-image" style="background-image: url('assets/albums/cat_6/6BM2R1573.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_6/6BM2R1574.JPG');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_6/6BM2R1575.JPG');"></div></div>
+    <div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><img class="gallery-image" loading="lazy" src="assets/albums/cat_6/615.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_6/69.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_6/6BM2R1478.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_6/6BM2R1565.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_6/6BM2R1571.JPG"></div>
+<div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><img class="gallery-image" loading="lazy" src="assets/albums/cat_6/6BM2R1573.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_6/6BM2R1574.JPG"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_6/6BM2R1575.JPG"></div>
 
-    <div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><div class="gallery-image" style="background-image: url('assets/albums/cat_2/25.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_2/27.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_2/29.jpg');"></div></div>
+    <div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><img class="gallery-image" loading="lazy" src="assets/albums/cat_2/25.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_2/27.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_2/29.jpg"></div>
       </div>
     </div>
     
@@ -292,11 +292,11 @@
         <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 300; margin: 0; color: var(--primary-color);">Honours</h2>
       </div>
       <div class="gallery-grid">
-    <div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><div class="gallery-image" style="background-image: url('assets/albums/cat_9/93.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_9/9IMG_20170323_123318_1.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_9/9IMG_20170323_123400.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_9/9IMG_20170323_123554.jpg');"></div></div>
-<div class="gallery-item fade-up"><div class="gallery-image" style="background-image: url('assets/albums/cat_9/9IMG_20170323_123710.jpg');"></div></div>
+    <div class="gallery-item fade-up" style="grid-column: span 2; grid-row: span 2;"><img class="gallery-image" loading="lazy" src="assets/albums/cat_9/93.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_9/9IMG_20170323_123318_1.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_9/9IMG_20170323_123400.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_9/9IMG_20170323_123554.jpg"></div>
+<div class="gallery-item fade-up"><img class="gallery-image" loading="lazy" src="assets/albums/cat_9/9IMG_20170323_123710.jpg"></div>
 
       </div>
     </div>
@@ -355,8 +355,7 @@
 
     items.forEach(item => {
       item.addEventListener('click', () => {
-        const bgImage = item.querySelector('.gallery-image').style.backgroundImage;
-        const url = bgImage.slice(5, -2).replace(/"/g, "").replace(/'/g, "");
+        const url = item.querySelector('.gallery-image').getAttribute('src');
         lightboxImg.src = url;
         lightbox.classList.add('active');
       });
