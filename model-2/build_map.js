@@ -68,15 +68,15 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
         const originDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
         originDot.setAttribute("cx", startX);
         originDot.setAttribute("cy", startY);
-        originDot.setAttribute("r", "6");
-        originDot.setAttribute("fill", "#f5d40c"); 
+        originDot.setAttribute("r", "8");
+        originDot.setAttribute("fill", "#ffffff"); 
         originDot.setAttribute("filter", "url(#glowStrong)");
         lineGroup.appendChild(originDot);
 
         const originText = document.createElementNS("http://www.w3.org/2000/svg", "text");
         originText.setAttribute("x", startX + 15);
         originText.setAttribute("y", startY + 5);
-        originText.setAttribute("fill", "#f5d40c");
+        originText.setAttribute("fill", "#ffffff");
         originText.setAttribute("font-family", "var(--font-mono), monospace");
         originText.setAttribute("font-size", "14px");
         originText.setAttribute("font-weight", "600");
@@ -103,8 +103,8 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
             const streakPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
             streakPath.setAttribute("d", pathData);
             streakPath.setAttribute("fill", "none");
-            streakPath.setAttribute("stroke", "#ffffff"); 
-            streakPath.setAttribute("stroke-width", "2.5");
+            streakPath.setAttribute("stroke", "#ffffff");
+            streakPath.setAttribute("stroke-width", "3");
             streakPath.setAttribute("stroke-linecap", "round");
             streakPath.setAttribute("filter", "url(#glow)");
             lineGroup.appendChild(streakPath);

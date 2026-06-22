@@ -53,7 +53,7 @@
         <h1 class="reveal-text">Kerala's Most Trusted</h1>
       </div>
       <div class="reveal-mask" style="margin-bottom: 2rem;">
-        <h1 class="reveal-text"><span>Supply chain Excellence.</span></h1>
+        <h1 class="reveal-text"><span style="color: white; font-family: var(--font-mono);">Supply chain Excellence.</span></h1>
       </div>
       <div class="reveal-mask" style="margin-bottom: 4rem;">
         <p class="reveal-text">52 years of uninterrupted growth across pharma and logistics — from the heart of Thrissur.</p>
@@ -65,22 +65,22 @@
     </div>
   </section>
 
-  <section class="stats">
-    <div class="stat-item fade-up">
-      <h3>52</h3>
-      <p>Years of Growth</p>
+  <section class="stats" style="background-color: var(--primary-color); color: #bf953f; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div class="stat-item fade-up" style="border-right: 1px solid rgba(255,255,255,0.1);">
+      <h3 style="font-family: var(--font-heading); color: white;">52</h3>
+      <p style="color: #bf953f; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Years of Growth</p>
     </div>
-    <div class="stat-item highlight fade-up">
-      <h3>2.5L</h3>
-      <p>Sq.Ft Space</p>
+    <div class="stat-item fade-up" style="border-right: 1px solid rgba(255,255,255,0.1);">
+      <h3 style="font-family: var(--font-heading); color: white;">2.5L</h3>
+      <p style="color: #bf953f; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Sq.Ft Space</p>
+    </div>
+    <div class="stat-item fade-up" style="border-right: 1px solid rgba(255,255,255,0.1);">
+      <h3 style="font-family: var(--font-heading); color: white;">20%</h3>
+      <p style="color: #bf953f; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">CAGR YoY Growth</p>
     </div>
     <div class="stat-item fade-up">
-      <h3>20%</h3>
-      <p>CAGR YoY Growth</p>
-    </div>
-    <div class="stat-item fade-up">
-      <h3>07</h3>
-      <p>Prime Locations</p>
+      <h3 style="font-family: var(--font-heading); color: white;">07</h3>
+      <p style="color: #bf953f; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Prime Locations</p>
     </div>
   </section>
 
@@ -100,59 +100,75 @@
       .scale-wrapper { display: flex; flex-direction: row; gap: 0; border-top: 1px solid var(--border-color); width: fit-content; padding-left: 5vw; padding-right: 5vw; }
       .scale-item { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 4rem; width: 60vw; border-right: 1px solid var(--border-color); border-bottom: none; transition: background-color 0.4s ease; height: 50vh; }
       .scale-item:hover { background-color: #fafafa; }
-      .scale-number { font-family: 'DM Mono', monospace; font-size: 6rem; line-height: 0.8; font-weight: 300; color: #E4E4E7; margin-bottom: 3rem; transition: color 0.4s ease; }
-      .scale-content { display: flex; flex-direction: column; gap: 1.5rem; }
+      .scale-header { display: flex; justify-content: space-between; align-items: flex-start; width: 100%; margin-bottom: 2rem; }
+      .scale-number { font-family: var(--font-heading); font-style: italic; font-size: 6rem; line-height: 0.8; font-weight: 300; color: #E4E4E7; transition: color 0.4s ease; }
+      .scale-logo { height: 75px; object-fit: contain; }
+      .scale-content { display: flex; flex-direction: column; gap: 1.5rem; width: 100%; }
       .scale-content h3 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 300; margin: 0; color: var(--text-color); line-height: 1.1; }
       .scale-content p { font-size: 1.2rem; color: #666; margin: 0; line-height: 1.8; }
       .scale-item:hover .scale-number { color: var(--primary-color); }
       
       @media (max-width: 768px) {
           .scale-item { width: 85vw; padding: 2rem; height: auto; }
-          .scale-number { font-size: 4rem; margin-bottom: 1.5rem; }
+          .scale-header { margin-bottom: 1.5rem; }
+          .scale-number { font-size: 4rem; }
+          .scale-logo { height: 50px; }
           .scale-content h3 { font-size: 2.5rem; }
       }
     </style>
     
     <div class="scale-wrapper">
       <div class="scale-item">
-        <div class="scale-number">01</div>
+        <div class="scale-header">
+          <div class="scale-number">01</div>
+          <img src="assets/jockey_logo.png" alt="Jockey Logo" class="scale-logo">
+        </div>
         <div class="scale-content">
-          <div style="margin-bottom: 1rem;"><img src="assets/jockey_logo.png" alt="Jockey Logo" style="height: 40px;"></div>
           <h3>Jockey<br>Distribution</h3>
           <p>Leo Group is the official Super Distributor for Jockey (Page Industries) across all of Kerala, managed directly under the Leo Group Team by specific managers dedicated solely to Jockey operations.</p>
         </div>
       </div>
       <div class="scale-item">
-        <div class="scale-number">02</div>
+        <div class="scale-header">
+          <div class="scale-number">02</div>
+          <img src="assets/ge_healthcare_purple.svg" alt="WIPRO GE Logo" class="scale-logo">
+        </div>
         <div class="scale-content">
-          <div style="margin-bottom: 1rem;"><img src="assets/ge_logo.png" alt="GE Logo" style="height: 40px;"></div>
           <h3>Healthcare<br>Logistics</h3>
-          <p>Managed by dedicated divisions like Leo Healthcare and Leo Logistics, corporate medical equipment distribution for GE HealthCare in Kerala is primarily managed by regional medical equipment dealers.</p>
+          <p>Managed by dedicated divisions like Leo Healthcare and Leo Logistics, corporate medical equipment distribution for WIPRO GE HEALTHCARE in Kerala is primarily managed by regional medical equipment dealers.</p>
         </div>
       </div>
       <div class="scale-item">
-        <div class="scale-number">03</div>
+        <div class="scale-header">
+          <div class="scale-number">03</div>
+        </div>
         <div class="scale-content">
-          <h3>Carrying &<br>Forwarding</h3>
+          <h3 style="font-size: 2.5rem;">CFA (Carrying and Forwarding Agents) & Super Stockists</h3>
           <p>Operating as the central distribution nexus for India's premier pharmaceutical brands. We maintain massive, rigorously monitored cold-chain facilities capable of handling highly sensitive biologicals at state-wide scale.</p>
         </div>
       </div>
       <div class="scale-item">
-        <div class="scale-number">04</div>
+        <div class="scale-header">
+          <div class="scale-number">04</div>
+        </div>
         <div class="scale-content">
-          <h3>Wholesale<br>Network</h3>
+          <h3>Supply Chain<br>Network</h3>
           <p>A relentless delivery apparatus reaching thousands of retail pharmacies and general trade outlets daily. Our logistics framework ensures same-day dispatch and zero stock-outs across critical healthcare sectors.</p>
         </div>
       </div>
       <div class="scale-item">
-        <div class="scale-number">05</div>
+        <div class="scale-header">
+          <div class="scale-number">05</div>
+        </div>
         <div class="scale-content">
           <h3>Last-Mile<br>Redistribution</h3>
           <p>Unmatched geographical penetration. We bridge the gap between major urban centers and remote rural markets, ensuring that life-saving products reach tier-2 and tier-3 towns with flawless consistency.</p>
         </div>
       </div>
       <div class="scale-item">
-        <div class="scale-number">06</div>
+        <div class="scale-header">
+          <div class="scale-number">06</div>
+        </div>
         <div class="scale-content">
           <h3>Diversified<br>Logistics</h3>
           <p>Beyond pharmaceuticals, our logistical mastery extends across multiple high-value categories, including FMCG and other specialized sectors, leveraging our 2 Lakh Sq.Ft infrastructure.</p>

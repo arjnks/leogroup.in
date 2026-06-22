@@ -37,7 +37,7 @@
     .timeline-point:last-child::before { animation: glow-pulse 2s infinite ease-in-out; animation-delay: 3s; }
     .timeline-point:hover { transform: translateY(-15px); }
     .timeline-point:hover::before { transform: translateX(-50%) scale(1.5); background-color: #fff; box-shadow: 0 0 30px #fff; animation: none; }
-    .timeline-year { font-family: 'DM Mono', monospace; font-size: 1.5rem; color: var(--primary-color); margin-bottom: 0.5rem; font-weight: bold; transition: color 0.4s ease; }
+    .timeline-year { font-family: 'DM Mono', monospace; font-size: 1.5rem; color: #e4e4e7; margin-bottom: 0.5rem; font-weight: bold; transition: color 0.4s ease; }
     .timeline-point:hover .timeline-year { color: #fff; text-shadow: 0 0 15px rgba(255,255,255,0.5); }
     .timeline-title { font-size: 1.1rem; color: #888; transition: color 0.4s ease; }
     .timeline-point:hover .timeline-title { color: #fff; }
@@ -48,7 +48,7 @@
     .mission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; }
     .mission-card { padding: 3rem; border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.02); transition: all 0.3s ease; }
     .mission-card:hover { border-color: var(--primary-color); background: rgba(255, 255, 255, 0.05); transform: translateY(-5px); }
-    .mission-card h3 { font-family: 'DM Mono', monospace; font-size: 1.2rem; color: var(--primary-color); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 0.5rem; }
+    .mission-card h3 { font-family: 'DM Mono', monospace; font-size: 1.2rem; color: #e4e4e7; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 0.5rem; }
     .mission-card h3::before { content: '◆'; font-size: 0.8rem; }
     .mission-card p { font-size: 1.1rem; line-height: 1.6; color: #aaa; }
   </style>
@@ -113,30 +113,30 @@
 
   <section class="stats-section parallax-container">
     <div class="parallax-bg" style="background-image: url('assets/stats_bg_warehouse.png');"></div>
-    <div class="stats-overlay"></div>
+    <div class="stats-overlay" style="background-color: rgba(255, 255, 255, 0.9);"></div>
     
     <div style="position: relative; z-index: 2; text-align: center; margin-bottom: 5rem;">
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 300; color: #fff;">By The Numbers</h2>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 300; color: var(--primary-color);">By The Numbers</h2>
     </div>
 
     <div class="stats-grid fade-up">
       <div class="stat-box">
-        <div class="stat-num">52</div>
+        <div class="stat-num" style="color: var(--primary-color);">52</div>
         <div class="stat-label">Years</div>
         <div class="stat-desc">Of trusted operations</div>
       </div>
       <div class="stat-box">
-        <div class="stat-num">600+</div>
+        <div class="stat-num" style="color: var(--primary-color);">600+</div>
         <div class="stat-label">Employees</div>
         <div class="stat-desc">Across Kerala</div>
       </div>
       <div class="stat-box">
-        <div class="stat-num">10</div>
+        <div class="stat-num" style="color: var(--primary-color);">10</div>
         <div class="stat-label">Companies</div>
         <div class="stat-desc">Under one roof</div>
       </div>
       <div class="stat-box">
-        <div class="stat-num">200k</div>
+        <div class="stat-num" style="color: var(--primary-color);">200k</div>
         <div class="stat-label">Sq Ft</div>
         <div class="stat-desc">Warehousing space</div>
       </div>
