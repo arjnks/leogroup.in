@@ -42,6 +42,11 @@ const jsTemplate = `document.addEventListener('DOMContentLoaded', () => {
 
         const kTarget = svg.querySelector('#kl') || svg.querySelector('#kerala');
         if (kTarget) {
+            kTarget.style.stroke = '#ffffff';
+            kTarget.style.strokeWidth = '2px';
+            kTarget.style.filter = 'url(#glowStrong)';
+            kTarget.parentNode.appendChild(kTarget); // bring to front
+            
             setTimeout(() => {
                 drawEmergingLines(svg, kTarget);
             }, 500);
