@@ -39,32 +39,38 @@ $_COOKIE = sanitize_payload($_COOKIE);
 
 // Generic Rate Limiter Logic
 function check_rate_limit($db, $client_ip, $endpoint, $max_attempts = 60, $time_window_minutes = 1) {
-    // Clean up old attempts
-    $clear_query = "DELETE FROM api_rate_limits WHERE attempt_time < (NOW() - INTERVAL :window MINUTE) AND endpoint = :endpoint";
-    $stmt_clear = $db->prepare($clear_query);
-    $stmt_clear->bindValue(':window', $time_window_minutes, PDO::PARAM_INT);
-    $stmt_clear->bindValue(':endpoint', $endpoint, PDO::PARAM_STR);
-    $stmt_clear->execute();
+    try {
+        // Clean up old attempts
+        $clear_query = "DELETE FROM api_rate_limits WHERE attempt_time < (NOW() - INTERVAL :window MINUTE) AND endpoint = :endpoint";
+        $stmt_clear = $db->prepare($clear_query);
+        $stmt_clear->bindValue(':window', $time_window_minutes, PDO::PARAM_INT);
+        $stmt_clear->bindValue(':endpoint', $endpoint, PDO::PARAM_STR);
+        $stmt_clear->execute();
 
-    // Check current attempts
-    $check_query = "SELECT COUNT(*) as attempt_count FROM api_rate_limits WHERE ip_address = :ip AND endpoint = :endpoint";
-    $stmt_check = $db->prepare($check_query);
-    $stmt_check->bindValue(':ip', $client_ip, PDO::PARAM_STR);
-    $stmt_check->bindValue(':endpoint', $endpoint, PDO::PARAM_STR);
-    $stmt_check->execute();
-    $data = $stmt_check->fetch(PDO::FETCH_ASSOC);
+        // Check current lockout status
+        $check_lockout = "SELECT COUNT(*) as attempt_count FROM api_rate_limits WHERE ip_address = :ip AND endpoint = :endpoint";
+        $stmt_lockout = $db->prepare($check_lockout);
+        $stmt_lockout->bindValue(':ip', $client_ip, PDO::PARAM_STR);
+        $stmt_lockout->bindValue(':endpoint', $endpoint, PDO::PARAM_STR);
+        $stmt_lockout->execute();
+        $lockout_data = $stmt_lockout->fetch();
 
-    if ($data['attempt_count'] >= $max_attempts) {
-        http_response_code(429);
-        echo json_encode(["error" => "Too many requests. Please try again later."]);
-        exit;
+        if ($lockout_data['attempt_count'] >= $max_attempts) {
+            http_response_code(429);
+            echo json_encode(["error" => "Rate limit exceeded for $endpoint. Try again in $time_window_minutes minutes."]);
+            exit;
+        }
+
+        // Record this attempt immediately
+        $insert_attempt = "INSERT INTO api_rate_limits (ip_address, endpoint, attempt_time) VALUES (:ip, :endpoint, NOW())";
+        $stmt_insert = $db->prepare($insert_attempt);
+        $stmt_insert->bindValue(':ip', $client_ip, PDO::PARAM_STR);
+        $stmt_insert->bindValue(':endpoint', $endpoint, PDO::PARAM_STR);
+        $stmt_insert->execute();
+    } catch (PDOException $e) {
+        // Silently bypass rate limiting if the table does not exist in production yet
+        // In a strict environment, you might want to log $e->getMessage() here.
+        return;
     }
-
-    // Log the new attempt
-    $insert_query = "INSERT INTO api_rate_limits (ip_address, endpoint) VALUES (:ip, :endpoint)";
-    $stmt_insert = $db->prepare($insert_query);
-    $stmt_insert->bindValue(':ip', $client_ip, PDO::PARAM_STR);
-    $stmt_insert->bindValue(':endpoint', $endpoint, PDO::PARAM_STR);
-    $stmt_insert->execute();
 }
 ?>

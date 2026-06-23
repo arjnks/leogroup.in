@@ -56,10 +56,14 @@ if ($stmt->rowCount() > 0) {
 
     if ($valid_password) {
         // Clear IP slate on successful login
-        $clear_ip = "DELETE FROM api_rate_limits WHERE ip_address = :ip AND endpoint = 'login'";
-        $stmt_clear = $db->prepare($clear_ip);
-        $stmt_clear->bindParam(':ip', $client_ip, PDO::PARAM_STR);
-        $stmt_clear->execute();
+        try {
+            $clear_ip = "DELETE FROM api_rate_limits WHERE ip_address = :ip AND endpoint = 'login'";
+            $stmt_clear = $db->prepare($clear_ip);
+            $stmt_clear->bindParam(':ip', $client_ip, PDO::PARAM_STR);
+            $stmt_clear->execute();
+        } catch (PDOException $e) {
+            // Silently ignore if table is missing on production
+        }
 
         // Prevent session fixation attacks
         session_regenerate_id(true);

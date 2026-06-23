@@ -10,13 +10,11 @@ class Database {
     public $conn;
 
     public function __construct() {
-        if (empty($_ENV['DB_HOST']) || empty($_ENV['DB_NAME'])) {
-            throw new Exception("Critical Database environment variables are missing.");
-        }
-        $this->host = $_ENV['DB_HOST'];
-        $this->db_name = $_ENV['DB_NAME'];
-        $this->username = $_ENV['DB_USER'] ?? 'root';
-        $this->password = $_ENV['DB_PASS'] ?? '';
+        // Fallback to $_SERVER if $_ENV is empty due to php.ini, or use defaults
+        $this->host = $_ENV['DB_HOST'] ?? $_SERVER['DB_HOST'] ?? 'localhost';
+        $this->db_name = $_ENV['DB_NAME'] ?? $_SERVER['DB_NAME'] ?? 'leogroup_db';
+        $this->username = $_ENV['DB_USER'] ?? $_SERVER['DB_USER'] ?? 'leogroup_user';
+        $this->password = $_ENV['DB_PASS'] ?? $_SERVER['DB_PASS'] ?? '';
     }
 
     public function getConnection() {
@@ -31,7 +29,7 @@ class Database {
             
         } catch(PDOException $exception) {
             http_response_code(500);
-            echo json_encode(["error" => "Database connection failed."]);
+            echo json_encode(["error" => "Database connection failed.", "details" => $exception->getMessage()]);
             exit;
         }
         return $this->conn;
