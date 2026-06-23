@@ -10,10 +10,15 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || !isset(
 }
 
 require_once dirname(__DIR__) . '/config/database.php';
+require_once dirname(__DIR__) . '/config/security.php';
 
 $database = new Database();
 $db = $database->getConnection();
 $cos_id = $_SESSION['co_id'];
+$client_ip = $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
+
+// Global API rate limit: 60 requests per minute
+check_rate_limit($db, $client_ip, 'ledger', 60, 1);
 
 // Get requested date, default to today
 $date_filter = isset($_GET['date']) && !empty($_GET['date']) ? $_GET['date'] : date("Y-m-d");

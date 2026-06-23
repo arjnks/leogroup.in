@@ -3,8 +3,7 @@ session_start();
 header("Content-Type: application/json; charset=UTF-8");
 
 require_once '../config/database.php';
-
-// Ensure strictly POST requests
+require_once '../config/security.php';
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(["error" => "Method not allowed."]);
@@ -12,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $data = json_decode(file_get_contents("php://input"));
+$data = sanitize_payload($data);
 
 if (empty($data->uname) || empty($data->pwd)) {
     http_response_code(400);
@@ -24,22 +24,8 @@ $db = $database->getConnection();
 
 $client_ip = $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
 
-// Step 1: Clean up attempts older than 15 minutes
-$clear_query = "DELETE FROM login_attempts WHERE attempt_time < (NOW() - INTERVAL 15 MINUTE)";
-$db->exec($clear_query);
-
-// Step 2: Check current lockout status
-$check_lockout = "SELECT COUNT(*) as attempt_count FROM login_attempts WHERE ip_address = :ip";
-$stmt_lockout = $db->prepare($check_lockout);
-$stmt_lockout->bindParam(':ip', $client_ip, PDO::PARAM_STR);
-$stmt_lockout->execute();
-$lockout_data = $stmt_lockout->fetch();
-
-if ($lockout_data['attempt_count'] >= 5) {
-    http_response_code(429);
-    echo json_encode(["error" => "Too many failed attempts. Your IP has been temporarily locked out for 15 minutes."]);
-    exit;
-}
+// Enforce 5 attempts per 15 minutes limit using central security wrapper
+check_rate_limit($db, $client_ip, 'login', 5, 15);
 
 // Parameterized Query: Mathematically eliminates SQL Injection
 $query = "SELECT id, costomer_id, password, status FROM user WHERE costomer_id = :uname AND status = 1 LIMIT 1";
@@ -70,7 +56,7 @@ if ($stmt->rowCount() > 0) {
 
     if ($valid_password) {
         // Clear IP slate on successful login
-        $clear_ip = "DELETE FROM login_attempts WHERE ip_address = :ip";
+        $clear_ip = "DELETE FROM api_rate_limits WHERE ip_address = :ip AND endpoint = 'login'";
         $stmt_clear = $db->prepare($clear_ip);
         $stmt_clear->bindParam(':ip', $client_ip, PDO::PARAM_STR);
         $stmt_clear->execute();
@@ -83,22 +69,10 @@ if ($stmt->rowCount() > 0) {
         http_response_code(200);
         echo json_encode(["message" => "Authentication successful", "redirect" => "../user/"]);
     } else {
-        // Record failed attempt
-        $insert_attempt = "INSERT INTO login_attempts (ip_address, attempt_time) VALUES (:ip, NOW())";
-        $stmt_insert = $db->prepare($insert_attempt);
-        $stmt_insert->bindParam(':ip', $client_ip, PDO::PARAM_STR);
-        $stmt_insert->execute();
-
         http_response_code(401);
         echo json_encode(["error" => "Invalid credentials."]);
     }
 } else {
-    // Record failed attempt
-    $insert_attempt = "INSERT INTO login_attempts (ip_address, attempt_time) VALUES (:ip, NOW())";
-    $stmt_insert = $db->prepare($insert_attempt);
-    $stmt_insert->bindParam(':ip', $client_ip, PDO::PARAM_STR);
-    $stmt_insert->execute();
-
     http_response_code(401);
     echo json_encode(["error" => "Invalid credentials."]);
 }
