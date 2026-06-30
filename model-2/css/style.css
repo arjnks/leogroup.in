@@ -230,7 +230,7 @@ nav a:hover::before { transform: scaleX(1); transform-origin: left; }
   display: grid; grid-template-columns: repeat(4, 1fr); background-color: var(--bg-color);
   padding: 6rem 5%; border-top: 1px solid #EDF2F7; border-bottom: 1px solid #EDF2F7;
 }
-.stat-item { border-right: 1px solid #EDF2F7; padding: 0 3rem; }
+.stat-item { border-right: 1px solid #EDF2F7; padding: 0 3rem; text-align: center; }
 .stat-item:last-child { border-right: none; }
 .stat-item h3 { font-family: var(--font-mono); font-size: var(--text-5xl); color: var(--primary-color); font-weight: 300; margin-bottom: 0.5rem; letter-spacing: -0.05em; }
 .stat-item.highlight h3 { color: var(--accent-color); font-weight: 400; }
