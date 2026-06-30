@@ -298,6 +298,7 @@ footer ul li a:hover { color: #fff; }
 
 /* Dropdown Navigation */
 nav ul li.dropdown { position: relative; padding-bottom: 1rem; margin-bottom: -1rem; }
+nav ul li.dropdown:hover { z-index: 10; }
 nav ul li.dropdown:hover .dropdown-menu { display: flex; opacity: 1; transform: translateY(0); pointer-events: auto; }
 .dropdown-menu { 
     position: absolute; top: 100%; left: 0; min-width: 220px; 
