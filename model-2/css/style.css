@@ -284,6 +284,8 @@ nav a:hover::before { transform: scaleX(1); transform-origin: left; }
 /* Footer */
 footer { background-color: var(--primary-color); color: #A0AEC0; padding: 8rem 5% 3rem; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 5rem; margin-bottom: 6rem; }
+.principals-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.facilities-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
 .footer-logo { color: #fff; font-size: var(--text-3xl); margin-bottom: 2rem; letter-spacing: -0.5px; }
 footer h4 { font-family: var(--font-mono); color: #fff; text-transform: uppercase; letter-spacing: 2px; font-size: var(--text-xs); margin-bottom: 2.5rem; }
 footer ul { list-style: none; }
@@ -382,6 +384,9 @@ nav ul li.dropdown:hover .dropdown-menu { display: flex; opacity: 1; transform: 
     .content-right { padding: 3rem 5% !important; }
     .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 1rem !important; }
     .mission-grid { grid-template-columns: 1fr !important; }
+    .principals-grid { grid-template-columns: 1fr !important; }
+    .facilities-grid { grid-template-columns: 1fr !important; }
+    .contact-grid { grid-template-columns: 1fr !important; }
     
     /* Timeline */
     .timeline-container { flex-direction: column; padding: 2rem 0 !important; border-top: none !important; border-left: 2px dashed rgba(255, 255, 255, 0.2); margin-left: 5%; gap: 3rem; }
