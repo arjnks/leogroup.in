@@ -347,6 +347,7 @@ nav ul li.dropdown:hover .dropdown-menu { display: flex; opacity: 1; transform: 
     
     .hero-btns { flex-direction: column; align-items: stretch; gap: 1rem; }
     .service-card { padding: 2rem 1.5rem !important; }
+    .logo-item { width: 180px; padding: 0 1.5rem; height: 70px !important; }
     
     /* Mobile Dropdown Fix */
     nav ul li.dropdown:hover .dropdown-menu { display: none; } /* override desktop */
