@@ -53,7 +53,7 @@
         <h1 class="reveal-text">Kerala's Most Trusted</h1>
       </div>
       <div class="reveal-mask" style="margin-bottom: 2rem;">
-        <h1 class="reveal-text"><span style="color: white; white-space: nowrap; font-size: clamp(1.8rem, 5vw, 6.5rem);">Supply chain Excellence.</span></h1>
+        <h1 class="reveal-text"><span style="color: white; font-size: var(--text-6xl);">Supply chain Excellence.</span></h1>
       </div>
       <div class="reveal-mask" style="margin-bottom: 4rem;">
         <p class="reveal-text">52 years of uninterrupted growth across warehousing and logistics in multiple sectors.</p>
@@ -105,7 +105,9 @@
       .scale-item:hover .scale-number { color: var(--primary-color); }
       
       @media (max-width: 768px) {
-          .scale-item { width: 85vw; padding: 2rem; height: auto; }
+          .pin-container { height: auto; overflow: visible; padding: 2rem 0; }
+          .scale-wrapper { flex-direction: column; width: 100%; padding-left: 0; padding-right: 0; }
+          .scale-item { width: 100%; padding: 3rem 5%; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); }
           .scale-header { margin-bottom: 1.5rem; }
           .scale-number { font-size: 4rem; }
           .scale-logo { height: 50px; }

@@ -311,10 +311,6 @@ nav ul li.dropdown:hover .dropdown-menu { display: flex; opacity: 1; transform: 
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-    /* Base typography */
-    h1.reveal-text { font-size: 3.5rem !important; }
-    h2.reveal-text { font-size: 2rem !important; }
-    
     /* Layout Grids */
     .services-grid { grid-template-columns: 1fr !important; gap: 2rem; }
     .stats { grid-template-columns: 1fr 1fr !important; padding: 3rem 5% !important; }
@@ -336,9 +332,9 @@ nav ul li.dropdown:hover .dropdown-menu { display: flex; opacity: 1; transform: 
         padding: 2rem 5%; flex-direction: column; align-items: flex-start;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Hidden */
         transition: clip-path 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        order: 3;
+        order: 3; z-index: 1000;
     }
-    body.dark-mode nav { border-bottom-color: rgba(255,255,255,0.1); }
+    body.dark-mode nav { border-bottom-color: rgba(255,255,255,0.1); background: var(--bg-color); }
     nav ul { flex-direction: column; align-items: flex-start; gap: 1.5rem; width: 100%; margin-top: 0; }
     nav a { font-size: 1.2rem; }
     header > .btn { display: none; } /* Hide partner button on mobile */
@@ -350,7 +346,6 @@ nav ul li.dropdown:hover .dropdown-menu { display: flex; opacity: 1; transform: 
     .mobile-menu-toggle:checked ~ .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     
     .hero-btns { flex-direction: column; align-items: stretch; gap: 1rem; }
-    .hero h1 { font-size: 3.5rem !important; }
     .service-card { padding: 2rem 1.5rem !important; }
     
     /* Mobile Dropdown Fix */
