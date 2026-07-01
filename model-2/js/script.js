@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
   heroTl.to('.hero .reveal-text', {
     y: 0,
     rotateZ: 0,
-    duration: 1.4,
+    duration: 1.0,
     ease: 'power4.out',
-    stagger: 0.1,
-    delay: 0.2
+    stagger: 0.08,
+    delay: 0
   })
   .to('.hero .fade-up', {
     opacity: 1,
